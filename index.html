@@ -1,184 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DJ Yusif | Official Page</title>
-    <style>
-        /* General Body Styling */
-        body {
-            background-color: #0A1D37; /* Dark Blue */
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            color: #fff;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DJ Yusif | Official Site</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #0a1d37, #122e5a); /* dark blue gradient */
+      color: #fff;
+      scroll-behavior: smooth;
+    }
 
-        /* Header Styling */
-        header {
-            background-color: #1E66A0; /* Light Blue */
-            text-align: center;
-            padding: 20px 0;
-        }
+    header {
+      background: #1e66a0;
+      text-align: center;
+      padding: 60px 20px;
+      animation: fadeIn 2s ease-in-out;
+    }
 
-        header h1 {
-            font-size: 2.5em;
-            margin: 0;
-        }
+    header h1 {
+      font-size: 3rem;
+      margin: 0;
+    }
 
-        /* Navigation Menu */
-        nav {
-            display: flex;
-            justify-content: center;
-            background-color: #0A1D37;
-            padding: 15px 0;
-        }
+    header p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+    }
 
-        nav a {
-            color: #fff;
-            margin: 0 20px;
-            text-decoration: none;
-            font-size: 1.2em;
-        }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      background-color: #0a1d37;
+      padding: 15px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
 
-        nav a:hover {
-            color: #1E66A0; /* Light Blue for hover effect */
-        }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
 
-        /* Section Styling */
-        section {
-            padding: 40px 20px;
-            text-align: center;
-        }
+    nav a:hover {
+      color: #00bfff;
+    }
 
-        section h2 {
-            color: #1E66A0; /* Light Blue */
-            font-size: 2em;
-            margin-bottom: 20px;
-        }
+    section {
+      padding: 60px 20px;
+      text-align: center;
+    }
 
-        section p {
-            font-size: 1.1em;
-            margin-bottom: 30px;
-            color: #fff;
-        }
+    h2 {
+      color: #1e90ff;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
 
-        .button {
-            background-color: #1E66A0; /* Blue */
-            color: #fff;
-            padding: 15px 30px;
-            border: none;
-            font-size: 1.2em;
-            cursor: pointer;
-            border-radius: 5px;
-            margin: 10px;
-            text-decoration: none;
-        }
+    p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto 30px auto;
+      line-height: 1.6;
+    }
 
-        .button:hover {
-            background-color: #154B6E; /* Darker Blue on hover */
-        }
+    .button {
+      background: #1e90ff;
+      color: white;
+      padding: 15px 30px;
+      margin: 10px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
 
-        /* Footer Styling */
-        footer {
-            background-color: #0A1D37; /* Dark Blue */
-            color: #fff;
-            text-align: center;
-            padding: 20px 0;
-        }
+    .button:hover {
+      background: #1572c1;
+    }
 
-        footer a {
-            color: #1E66A0; /* Light Blue */
-            text-decoration: none;
-        }
+    footer {
+      background: #0a1d37;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      border-top: 1px solid #1e90ff;
+    }
 
-        footer a:hover {
-            color: #FF7F00; /* Orange on hover */
-        }
+    footer a {
+      color: #1e90ff;
+      text-decoration: none;
+    }
 
-        /* Responsive Design - Mobile and Tablet */
-        @media screen and (max-width: 768px) {
-            header h1 {
-                font-size: 2em;
-            }
+    footer a:hover {
+      text-decoration: underline;
+    }
 
-            nav {
-                flex-direction: column;
-                padding: 20px;
-            }
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
 
-            nav a {
-                margin: 10px 0;
-            }
-
-            section h2 {
-                font-size: 1.8em;
-            }
-
-            section p {
-                font-size: 1em;
-            }
-
-            .button {
-                padding: 10px 20px;
-                font-size: 1em;
-            }
-
-            footer {
-                padding: 15px 0;
-            }
-        }
-    </style>
+    @media screen and (max-width: 768px) {
+      header h1 { font-size: 2rem; }
+      h2 { font-size: 2rem; }
+      nav {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <!-- Header -->
-    <header>
-        <h1>Welcome to DJ Yusif's Official Page</h1>
-    </header>
+  <header>
+    <h1>DJ Yusif</h1>
+    <p>Official DJ Website – Beats. Lights. Energy.</p>
+  </header>
 
-    <!-- Navigation -->
-    <nav>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
-    </nav>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#products">Products</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-    <!-- About Section -->
-    <section id="about">
-        <h2>About DJ Yusif</h2>
-        <p>Welcome to my official website! I’m DJ Yusif, and I specialize in creating an unforgettable experience for your events with great music, lighting, and atmosphere. Let me take your party to the next level!</p>
-        <a href="#services" class="button">See My Services</a>
-    </section>
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I'm DJ Yusif, a professional DJ from Azerbaijan. I bring energy, style, and beats that make every event unforgettable. Weddings, parties, clubs – I do it all.</p>
+    <a class="button" href="#services">Explore Services</a>
+  </section>
 
-    <!-- Services Section -->
-    <section id="services" style="background-color: #1A2A6C;">
-        <h2>My Services</h2>
-        <p>I offer a range of DJ services, including:</p>
-        <ul>
-            <li><strong>Event DJing</strong> – Perfect for weddings, parties, and events.</li>
-            <li><strong>Lighting Design</strong> – Custom lighting to match the vibe of your event.</li>
-            <li><strong>Sound System Setup</strong> – High-quality sound systems for any venue.</li>
-        </ul>
-        <a href="#contact" class="button">Contact Me</a>
-    </section>
+  <section id="services">
+    <h2>What I Offer</h2>
+    <p>
+      🎵 Professional DJing <br/>
+      💡 Dynamic Light Shows <br/>
+      🔊 High-Quality Sound Systems <br/>
+      🎤 Mic & Hosting Services <br/>
+    </p>
+    <a class="button" href="#contact">Book Now</a>
+  </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <p>Interested in booking me for your next event? Fill out the form below or reach out to me directly!</p>
-        <form action="mailto:djyusif@example.com" method="post" enctype="text/plain">
-            <input type="text" name="name" placeholder="Your Name" required><br><br>
-            <input type="email" name="email" placeholder="Your Email" required><br><br>
-            <textarea name="message" rows="5" placeholder="Your Message" required></textarea><br><br>
-            <input type="submit" value="Send Message" class="button">
-        </form>
-    </section>
+  <section id="products">
+    <h2>View DJ Gear</h2>
+    <p>Explore my favorite DJ tools and custom merchandise. Stay tuned – DJ Yusif branded gear coming soon!</p>
+    <a class="button" href="https://yourshop.com" target="_blank">View Products</a>
+  </section>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 DJ Yusif | <a href="https://github.com/yourgithub">GitHub</a></p>
-    </footer>
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p>Want to book me for your next event? Let's make it epic! Use the button below or reach out via email.</p>
+    <a class="button" href="mailto:djyusif@example.com">Email Me</a>
+  </section>
+
+  <footer>
+    &copy; 2025 DJ Yusif • <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+  </footer>
 
 </body>
 </html>
