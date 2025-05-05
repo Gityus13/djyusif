@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>DJ Yusif | Official Site</title>
+  <title>DJ Yusif | Official Website</title>
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to right, #0a1d37, #122e5a); /* dark blue gradient */
+      background: linear-gradient(to right, #0a1d37, #122e5a);
       color: #fff;
       scroll-behavior: smooth;
     }
@@ -17,7 +17,7 @@
       background: #1e66a0;
       text-align: center;
       padding: 60px 20px;
-      animation: fadeIn 2s ease-in-out;
+      animation: fadeIn 1.5s ease-in-out;
     }
 
     header h1 {
@@ -33,7 +33,8 @@
     nav {
       display: flex;
       justify-content: center;
-      gap: 30px;
+      flex-wrap: wrap;
+      gap: 25px;
       background-color: #0a1d37;
       padding: 15px;
       position: sticky;
@@ -45,7 +46,7 @@
       color: white;
       text-decoration: none;
       font-weight: bold;
-      transition: color 0.3s ease;
+      transition: 0.3s;
     }
 
     nav a:hover {
@@ -79,13 +80,32 @@
       border-radius: 5px;
       font-size: 1rem;
       cursor: pointer;
-      transition: background 0.3s ease;
+      transition: 0.3s;
       text-decoration: none;
       display: inline-block;
     }
 
     .button:hover {
       background: #1572c1;
+    }
+
+    .gallery {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .gallery img {
+      width: 280px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
     }
 
     footer {
@@ -106,16 +126,26 @@
     }
 
     @keyframes fadeIn {
-      from {opacity: 0;}
-      to {opacity: 1;}
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
     @media screen and (max-width: 768px) {
-      header h1 { font-size: 2rem; }
-      h2 { font-size: 2rem; }
+      header h1 {
+        font-size: 2rem;
+      }
+
+      h2 {
+        font-size: 2rem;
+      }
+
       nav {
         flex-direction: column;
         gap: 10px;
+      }
+
+      .gallery img {
+        width: 90%;
       }
     }
   </style>
@@ -130,36 +160,47 @@
   <nav>
     <a href="#about">About</a>
     <a href="#services">Services</a>
+    <a href="#gallery">Photos</a>
     <a href="#products">Products</a>
     <a href="#contact">Contact</a>
   </nav>
 
   <section id="about">
     <h2>About Me</h2>
-    <p>I'm DJ Yusif, a professional DJ from Azerbaijan. I bring energy, style, and beats that make every event unforgettable. Weddings, parties, clubs – I do it all.</p>
-    <a class="button" href="#services">Explore Services</a>
+    <p>I'm DJ Yusif, a professional DJ from Azerbaijan. I mix unforgettable beats for parties, weddings, clubs, and events — always bringing the vibes and energy!</p>
+    <a class="button" href="#services">View Services</a>
   </section>
 
   <section id="services">
     <h2>What I Offer</h2>
     <p>
-      🎵 Professional DJing <br/>
-      💡 Dynamic Light Shows <br/>
-      🔊 High-Quality Sound Systems <br/>
-      🎤 Mic & Hosting Services <br/>
+      🎵 DJ Mixing for All Events<br>
+      💡 Light & Visual Effects<br>
+      🎤 Hosting & Mic Services<br>
+      🔊 Loud & Clear Sound System
     </p>
-    <a class="button" href="#contact">Book Now</a>
+    <a class="button" href="#contact">Book Me</a>
+  </section>
+
+  <section id="gallery">
+    <h2>My DJ Photos</h2>
+    <p>Check out my gear and events I've rocked!</p>
+    <div class="gallery">
+      <img src="your-photo1.jpg" alt="DJ setup 1">
+      <img src="your-photo2.jpg" alt="Party crowd">
+      <img src="your-photo3.jpg" alt="DJ lights">
+    </div>
   </section>
 
   <section id="products">
-    <h2>View DJ Gear</h2>
-    <p>Explore my favorite DJ tools and custom merchandise. Stay tuned – DJ Yusif branded gear coming soon!</p>
+    <h2>DJ Gear & Merch</h2>
+    <p>Buy my custom DJ Yusif gear, accessories and equipment — coming soon!</p>
     <a class="button" href="https://yourshop.com" target="_blank">View Products</a>
   </section>
 
   <section id="contact">
     <h2>Contact Me</h2>
-    <p>Want to book me for your next event? Let's make it epic! Use the button below or reach out via email.</p>
+    <p>Let’s make your event amazing. Send me a message now to book your show!</p>
     <a class="button" href="mailto:djyusif@example.com">Email Me</a>
   </section>
 
