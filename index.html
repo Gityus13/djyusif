@@ -3,62 +3,173 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DDJ FLX 4 Yusif</title>
+    <title>DJ Yusif | Official Page</title>
     <style>
+        /* General Body Styling */
         body {
             background-color: #0A1D37; /* Dark Blue */
-            color: white;
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
+            color: #fff;
         }
 
-        h1 {
-            color: #1E66A0; /* Lighter Blue */
+        /* Header Styling */
+        header {
+            background-color: #1E66A0; /* Light Blue */
             text-align: center;
-            padding: 20px;
+            padding: 20px 0;
         }
 
-        .container {
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        /* Navigation Menu */
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #0A1D37;
+            padding: 15px 0;
+        }
+
+        nav a {
+            color: #fff;
+            margin: 0 20px;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+
+        nav a:hover {
+            color: #FF7F00; /* Orange for hover effect */
+        }
+
+        /* Section Styling */
+        section {
+            padding: 40px 20px;
             text-align: center;
-            padding: 50px;
+        }
+
+        section h2 {
+            color: #FF7F00; /* Orange */
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        section p {
+            font-size: 1.1em;
+            margin-bottom: 30px;
+            color: #fff;
         }
 
         .button {
-            background-color: #1E66A0; /* Blue Button */
-            color: white;
-            padding: 10px 20px;
+            background-color: #1E66A0; /* Blue */
+            color: #fff;
+            padding: 15px 30px;
             border: none;
+            font-size: 1.2em;
             cursor: pointer;
-            font-size: 16px;
             border-radius: 5px;
-            margin: 10px; /* Space between buttons */
+            margin: 10px;
+            text-decoration: none;
         }
 
         .button:hover {
-            background-color: #154B6E; /* Darker Blue on Hover */
+            background-color: #154B6E; /* Darker Blue on hover */
         }
 
+        /* Footer Styling */
         footer {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            text-align: center;
             background-color: #0A1D37; /* Dark Blue */
-            padding: 10px;
-            color: white;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        footer a {
+            color: #FF7F00; /* Orange */
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #1E66A0; /* Light Blue on hover */
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            nav {
+                flex-direction: column;
+                padding: 20px;
+            }
+
+            nav a {
+                margin: 10px 0;
+            }
+
+            section p {
+                font-size: 1em;
+            }
+
+            .button {
+                padding: 10px 20px;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>Welcome to DJ Yusif's Official Page</h1>
-    <div class="container">
-        <p>Explore my music, events, and more!</p>
-        <button class="button">Book Now</button>
-        <button class="button">View Product</button> <!-- New Button -->
-    </div>
+
+    <!-- Header -->
+    <header>
+        <h1>Welcome to DJ Yusif's Official Page</h1>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About DJ Yusif</h2>
+        <p>Welcome to my official website! I’m DJ Yusif, and I specialize in creating an unforgettable experience for your events with great music, lighting, and atmosphere. Let me take your party to the next level!</p>
+        <a href="#services" class="button">See My Services</a>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" style="background-color: #1A2A6C;">
+        <h2>My Services</h2>
+        <p>I offer a range of DJ services, including:</p>
+        <ul>
+            <li><strong>Event DJing</strong> – Perfect for weddings, parties, and events.</li>
+            <li><strong>Lighting Design</strong> – Custom lighting to match the vibe of your event.</li>
+            <li><strong>Sound System Setup</strong> – High-quality sound systems for any venue.</li>
+        </ul>
+        <a href="#contact" class="button">Contact Me</a>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Interested in booking me for your next event? Fill out the form below or reach out to me directly!</p>
+        <form action="mailto:djyusif@example.com" method="post" enctype="text/plain">
+            <input type="text" name="name" placeholder="Your Name" required><br><br>
+            <input type="email" name="email" placeholder="Your Email" required><br><br>
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea><br><br>
+            <input type="submit" value="Send Message" class="button">
+        </form>
+    </section>
+
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2025 DJ Yusif</p>
+        <p>&copy; 2025 DJ Yusif | <a href="https://github.com/yourgithub">GitHub</a></p>
     </footer>
+
 </body>
 </html>
