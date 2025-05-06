@@ -5,12 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>DJ Yusif | Official Website</title>
 
-  <!-- Favicon Setup for PNG -->
+  <!-- Favicon -->
   <link rel="icon" type="image/png" href="/favicon.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <link rel="manifest" href="/site.webmanifest" />
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
     body {
@@ -55,12 +56,11 @@
       color: white;
       text-decoration: none;
       font-weight: bold;
-      transition: 0.3s;
       background: #1e90ff;
       padding: 10px 20px;
-      border: none;
       border-radius: 5px;
       cursor: pointer;
+      border: none;
     }
 
     nav a:hover, .button:hover {
@@ -81,7 +81,7 @@
     p {
       font-size: 1.1rem;
       max-width: 700px;
-      margin: 0 auto 30px auto;
+      margin: 0 auto 30px;
       line-height: 1.6;
     }
 
@@ -104,12 +104,47 @@
       transform: scale(1.05);
     }
 
+    .testimonial {
+      background: #222;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 20px auto;
+      max-width: 600px;
+      font-size: 1.1rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    #booking-form {
+      background: #121212;
+      padding: 30px;
+      border-radius: 10px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 1.1rem;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #1e90ff;
+      background: #222;
+      color: white;
+      margin-bottom: 15px;
+    }
+
+    /* Footer */
     footer {
       background: #0a1d37;
       text-align: center;
       padding: 20px;
-      font-size: 0.9rem;
       border-top: 1px solid #1e90ff;
+      font-size: 0.9rem;
     }
 
     footer a {
@@ -121,233 +156,188 @@
       text-decoration: underline;
     }
 
-    /* Booking Form */
-    #booking-form {
-      display: inline-block;
-      max-width: 500px;
+    /* Dark Mode */
+    .dark-mode {
       background: #121212;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-    }
-
-    .form-group {
-      margin-bottom: 15px;
-    }
-
-    label {
-      font-size: 1.1rem;
-      display: block;
-      margin-bottom: 5px;
-    }
-
-    input, select {
-      width: 100%;
-      padding: 10px;
-      font-size: 1rem;
-      border: 1px solid #1e90ff;
-      border-radius: 5px;
-      background: #222;
       color: white;
     }
 
-    .checkbox-group label {
-      display: block;
-      font-size: 1.1rem;
-      margin: 5px 0;
-    }
-
-    /* Testimonials */
-    .testimonial {
-      font-size: 1.2rem;
-      max-width: 600px;
-      margin: 20px auto;
-      background: #222;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    }
-
-    .testimonial p:first-child {
-      font-style: italic;
-    }
-
-    .testimonial p:last-child {
-      text-align: right;
-      margin-top: 15px;
-      font-weight: bold;
-    }
-
-    /* Responsive Design */
-    @media screen and (max-width: 768px) {
-      header h1 {
-        font-size: 2rem;
-      }
-      h2 {
-        font-size: 2rem;
-      }
-      .gallery img {
-        width: 90%;
-      }
-    }
-
-    /* Dark Mode Styles */
-    .dark-mode {
-      background: #121212;
-      color: #ffffff;
-    }
-
-    /* Dark Mode Header */
     .dark-mode header {
       background: #004f6d;
     }
 
-    .dark-mode header h1 {
-      text-shadow: 0 0 10px #00ff99;
-    }
-
-    /* Dark Mode Nav */
     .dark-mode nav {
       background-color: #c70039;
     }
 
-    .dark-mode nav a, .dark-mode .button {
-      background: #1e90ff;
-    }
-
-    .dark-mode nav a:hover, .dark-mode .button:hover {
-      background: #1572c1;
-    }
-
-    /* Dark Mode Footer */
     .dark-mode footer {
-      background: #121212;
-      color: #ffffff;
+      background: #1a1a1a;
     }
 
-    /* Dark Mode Booking Form */
-    .dark-mode #booking-form {
-      background: #121212;
+    /* Scroll Animations */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease-out;
     }
 
-    .dark-mode .form-group input, .dark-mode .form-group select {
-      background: #222;
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Back to top */
+    #backToTop {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      font-size: 20px;
+      background: #1e90ff;
+      padding: 10px 15px;
+      border-radius: 50%;
+      display: none;
+      cursor: pointer;
       color: white;
-      border-color: #1e90ff;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>DJ Yusif</h1>
-    <p>Official DJ Website – Beats. Lights. Energy.</p>
-  </header>
+<header>
+  <h1>DJ Yusif</h1>
+  <p>Official DJ Website – Beats. Lights. Energy.</p>
+</header>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#gallery">Photos</a>
-    <a href="#products">Products</a>
-    <a href="#contact">Contact</a>
-    <button id="darkModeToggle">Dark Mode</button>
-  </nav>
+<nav>
+  <a href="#about">About</a>
+  <a href="#services">Services</a>
+  <a href="#gallery">Photos</a>
+  <a href="#products">Products</a>
+  <a href="#contact">Contact</a>
+  <button class="button" onclick="toggleDarkMode()">Dark Mode</button>
+</nav>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>I'm DJ Yusif, a professional DJ from Azerbaijan. I mix unforgettable beats for parties, weddings, clubs, and events — always bringing the vibes and energy!</p>
-    <a class="button" href="#services">View Services</a>
-  </section>
+<section id="about" class="fade-in">
+  <h2>About Me</h2>
+  <p>I'm DJ Yusif, a pro DJ from Azerbaijan. I light up weddings, parties, and events with beats and energy like no one else.</p>
+</section>
 
-  <section id="services">
-    <h2>What I Offer</h2>
-    <p>
-      🎵 DJ Mixing for All Events<br>
-      💡 Light & Visual Effects<br>
-      🎤 Hosting & Mic Services<br>
-      🔊 Loud & Clear Sound System
-    </p>
-    <a class="button" href="#booking">Book Me</a>
-  </section>
+<section id="services" class="fade-in">
+  <h2>Services</h2>
+  <p>🎵 Music Mixing<br>💡 Lighting<br>🎤 Microphone Hosting<br>🔊 Loud Sound System</p>
+</section>
 
-  <section id="gallery">
-    <h2>My DJ Photos</h2>
-    <div class="gallery">
-      <img src="djlogo.jpg.png" alt="DJ setup" loading="lazy">
-      <img src="newsong.jpg" alt="New vibe song" loading="lazy">
-      <img src="your-photo3.jpg" alt="DJ lights" loading="lazy">
-    </div>
-  </section>
+<section id="gallery" class="fade-in">
+  <h2>My DJ Photos</h2>
+  <div class="gallery">
+    <img src="djlogo.jpg.png" alt="DJ Logo">
+    <img src="newsong.jpg" alt="New Song">
+    <img src="your-photo3.jpg" alt="DJ Lights">
+  </div>
+</section>
 
-  <section id="products">
-    <h2>DJ Gear & Merch</h2>
-    <p>Exclusive DJ Yusif gear and equipment available!</p>
-  </section>
+<section id="products" class="fade-in">
+  <h2>Products</h2>
+  <p>Check out my exclusive DJ gear & merch!</p>
+</section>
 
-  <section id="testimonials">
-    <h2>What People Say</h2>
-    <div class="testimonial">
-      <p>"DJ Yusif took our wedding to the next level! His mixing and lighting were phenomenal!"</p>
-      <p>- Sam & Mary</p>
-    </div>
-    <div class="testimonial">
-      <p>"The energy DJ Yusif brought to our party was unmatched. Highly recommend!"</p>
-      <p>- Mark T.</p>
-    </div>
-  </section>
+<section id="testimonials" class="fade-in">
+  <h2>Testimonials</h2>
+  <div class="testimonial">
+    <p>"DJ Yusif lit up our wedding! Amazing performance!"</p>
+    <p>- Sam & Mary</p>
+  </div>
+</section>
 
-  <section id="booking">
-    <h2>Book DJ Yusif</h2>
+<section id="booking" class="fade-in">
+  <h2>Book Me</h2>
+  <div style="margin-bottom: 20px;">
+    <button class="button" onclick="alert('Lighting Booking - $200')">Lighting 💡 - $200</button>
+    <button class="button" onclick="alert('Call Booking - $50')">Call 📞 - $50</button>
+    <button class="button" onclick="alert('Wedding Booking - $500')">Wedding 💍 - $500</button>
+  </div>
 
-    <!-- Booking Type Buttons -->
-    <div style="margin-bottom: 20px;">
-      <button class="button" onclick="alert('Lighting Booking - $200')">Lighting 💡 - $200</button>
-      <button class="button" onclick="alert('Call Booking - $50')">Call 📞 - $50</button>
-      <button class="button" onclick="alert('Wedding Booking - $500')">Wedding 💍 - $500</button>
-    </div>
+  <div style="margin-bottom: 20px;">
+    <button class="button" onclick="changeLanguage('az')">🇦🇿 AZ</button>
+    <button class="button" onclick="changeLanguage('ru')">🇷🇺 RU</button>
+    <button class="button" onclick="changeLanguage('en')">🇬🇧 EN</button>
+  </div>
 
-    <!-- Booking Form -->
-    <div id="booking-form">
-      <form action="#" method="POST">
-        <div class="form-group">
-          <label for="name">Your Name</label>
-          <input type="text" id="name" name="name" required>
-        </div>
-        <div class="form-group">
-          <label for="email">Your Email</label>
-          <input type="email" id="email" name="email" required>
-        </div>
-        <div class="form-group">
-          <label for="event-date">Event Date</label>
-          <input type="date" id="event-date" name="event-date" required>
-        </div>
-        <div class="form-group">
-          <label for="service">Select Service</label>
-          <select id="service" name="service" required>
-            <option value="lighting">Lighting</option>
-            <option value="call">Call</option>
-            <option value="wedding">Wedding</option>
-          </select>
-        </div>
-        <div class="checkbox-group">
-          <label><input type="checkbox" name="agreement" required> I agree to the terms and conditions</label>
-        </div>
-        <button type="submit" class="button">Submit Booking</button>
-      </form>
-    </div>
-  </section>
+  <div id="booking-form">
+    <form onsubmit="handleSubmit(event)">
+      <label for="event-date">Event Date</label>
+      <input type="date" id="event-date" name="event-date" required>
 
-  <footer>
-    <p>&copy; 2025 DJ Yusif. All rights reserved.</p>
-    <p><a href="mailto:contact@djyusif.com">Contact Us</a></p>
-  </footer>
+      <label for="event-type">Event Type</label>
+      <select id="event-type" name="event-type" required>
+        <option>Wedding</option>
+        <option>Party</option>
+        <option>Corporate</option>
+        <option>Other</option>
+      </select>
 
-  <script>
-    // Dark Mode Toggle Button
-    document.getElementById('darkModeToggle').addEventListener('click', function () {
-      document.body.classList.toggle('dark-mode');
+      <label><input type="checkbox"> Sound System</label>
+      <label><input type="checkbox"> Lighting</label>
+      <label><input type="checkbox"> Microphone</label>
+
+      <button class="button" type="submit">Submit Booking</button>
+    </form>
+    <p id="success-message" style="color:lightgreen; display:none; margin-top:15px;">Booking submitted!</p>
+  </div>
+</section>
+
+<section id="contact" class="fade-in">
+  <h2>Contact</h2>
+  <p>📧 Email: <a href="mailto:20djyusif13@gmail.com">20djyusif13@gmail.com</a></p>
+</section>
+
+<section class="fade-in">
+  <h2>Listen to My Mix</h2>
+  <audio controls>
+    <source src="sample.mp3" type="audio/mpeg">
+    Your browser doesn't support audio playback.
+  </audio>
+</section>
+
+<footer>
+  <p>© 2025 DJ Yusif | <a href="mailto:20djyusif13@gmail.com">20djyusif13@gmail.com</a></p>
+  <div>
+    <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+  </div>
+</footer>
+
+<button id="backToTop" onclick="window.scrollTo({top:0, behavior:'smooth'})">⬆</button>
+
+<script>
+  function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+  }
+
+  function changeLanguage(lang) {
+    if (lang === 'az') alert('Sayt Azərbaycan dilinə keçirildi.');
+    else if (lang === 'ru') alert('Сайт переведен на русский язык.');
+    else alert('Language changed to English.');
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    document.getElementById('success-message').style.display = 'block';
+  }
+
+  // Scroll animation
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
     });
-  </script>
+  });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
+  // Back to top
+  window.onscroll = () => {
+    const btn = document.getElementById('backToTop');
+    btn.style.display = window.scrollY > 300 ? 'block' : 'none';
+  };
+</script>
 </body>
 </html>
