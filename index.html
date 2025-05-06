@@ -25,9 +25,10 @@
       transition: background 0.5s ease;
       position: relative;
       height: 100vh;
+      overflow-x: hidden; /* Prevent horizontal scroll */
     }
     .video-background {
-      position: absolute;
+      position: fixed;
       top: 0;
       left: 0;
       width: 100%;
@@ -40,6 +41,7 @@
       text-align: center;
       padding: 60px 20px;
       position: relative;
+      z-index: 1; /* Ensures header content is above the video */
     }
     header .logo {
       position: absolute;
@@ -77,6 +79,7 @@
       min-height: 300px;
       padding: 60px 20px;
       text-align: center;
+      z-index: 1; /* Ensures section content is above the video */
     }
     h2 {
       color: #1e90ff;
@@ -142,7 +145,7 @@
 <body>
 
 <video class="video-background" autoplay loop muted>
-  <source src="dj_background.mp4" type="video/mp4">
+  <source src="background-video.mp4" type="video/mp4">
 </video>
 
 <header>
