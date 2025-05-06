@@ -307,4 +307,63 @@
   </section>
 
   <section id="products">
-    <h2>DJ Gear & Merch
+    <h2>DJ Gear & Merch</h2>
+    <p>Exclusive DJ Yusif gear and equipment available!</p>
+    <div class="gallery">
+      <!-- Add products here -->
+    </div>
+  </section>
+
+  <section id="testimonials">
+    <h2>What People Say</h2>
+    <div class="testimonial">
+      <p>"DJ Yusif took our wedding to the next level! His mixing and lighting were phenomenal!"</p>
+      <p>- Sam & Mary</p>
+    </div>
+    <div class="testimonial">
+      <p>"The energy DJ Yusif brought to our party was unmatched. Highly recommend!"</p>
+      <p>- Mark T.</p>
+    </div>
+  </section>
+
+  <section id="booking">
+    <h2>Book DJ Yusif</h2>
+    <div id="booking-form">
+      <form action="#" method="post">
+        <div class="form-group">
+          <label for="event-date">Event Date</label>
+          <input type="date" id="event-date" name="event-date" required>
+        </div>
+        <div class="form-group">
+          <label for="event-type">Event Type</label>
+          <select id="event-type" name="event-type" required>
+            <option value="Wedding">Wedding</option>
+            <option value="Party">Party</option>
+            <option value="Corporate">Corporate Event</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="form-group checkbox-group">
+          <label>Equipment Needed:</label>
+          <label><input type="checkbox" name="equipment" value="Sound System"> Sound System</label>
+          <label><input type="checkbox" name="equipment" value="Lighting"> Lighting</label>
+          <label><input type="checkbox" name="equipment" value="Microphone"> Microphone</label>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="button">Submit Booking</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 DJ Yusif | <a href="mailto:contact@djyusif.com">Contact</a></p>
+  </footer>
+
+  <script>
+    document.getElementById('darkModeToggle').addEventListener('click', function() {
+      document.body.classList.toggle('dark-mode');
+    });
+  </script>
+</body>
+</html>
