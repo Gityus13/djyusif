@@ -191,19 +191,49 @@
       }
     }
 
-    /* Dark Mode */
+    /* Dark Mode Styles */
     .dark-mode {
       background: #121212;
       color: #ffffff;
     }
+
+    /* Dark Mode Header */
     .dark-mode header {
       background: #004f6d;
     }
+
+    .dark-mode header h1 {
+      text-shadow: 0 0 10px #00ff99;
+    }
+
+    /* Dark Mode Nav */
     .dark-mode nav {
       background-color: #c70039;
     }
+
+    .dark-mode nav a, .dark-mode .button {
+      background: #1e90ff;
+    }
+
+    .dark-mode nav a:hover, .dark-mode .button:hover {
+      background: #1572c1;
+    }
+
+    /* Dark Mode Footer */
     .dark-mode footer {
       background: #121212;
+      color: #ffffff;
+    }
+
+    /* Dark Mode Booking Form */
+    .dark-mode #booking-form {
+      background: #121212;
+    }
+
+    .dark-mode .form-group input, .dark-mode .form-group select {
+      background: #222;
+      color: white;
+      border-color: #1e90ff;
     }
   </style>
 </head>
@@ -276,47 +306,48 @@
       <button class="button" onclick="alert('Wedding Booking - $500')">Wedding 💍 - $500</button>
     </div>
 
-    <!-- Language Toggle -->
-    <div style="margin-bottom: 20px;">
-      <button class="button" onclick="changeLanguage('az')">🇦🇿 AZ</button>
-      <button class="button" onclick="changeLanguage('ru')">🇷🇺 RU</button>
-      <button class="button" onclick="changeLanguage('en')">🇬🇧 EN</button>
-    </div>
-
     <!-- Booking Form -->
     <div id="booking-form">
-      <form action="#" method="post">
+      <form action="#" method="POST">
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Your Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
         <div class="form-group">
           <label for="event-date">Event Date</label>
           <input type="date" id="event-date" name="event-date" required>
         </div>
         <div class="form-group">
-          <label for="event-type">Event Type</label>
-          <select id="event-type" name="event-type" required>
-            <option value="Wedding">Wedding</option>
-            <option value="Party">Party</option>
-            <option value="Corporate">Corporate Event</option>
-            <option value="Other">Other</option>
+          <label for="service">Select Service</label>
+          <select id="service" name="service" required>
+            <option value="lighting">Lighting</option>
+            <option value="call">Call</option>
+            <option value="wedding">Wedding</option>
           </select>
         </div>
-        <div class="form-group checkbox-group">
-          <label>Equipment Needed:</label>
-          <label><input type="checkbox" name="equipment" value="Sound System"> Sound System</label>
-          <label><input type="checkbox" name="equipment" value="Lighting"> Lighting</label>
-          <label><input type="checkbox" name="equipment" value="Microphone"> Microphone</label>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="agreement" required> I agree to the terms and conditions</label>
         </div>
-        <div class="form-group">
-          <button type="submit" class="button">Submit Booking</button>
-        </div>
+        <button type="submit" class="button">Submit Booking</button>
       </form>
     </div>
   </section>
 
   <footer>
-    <p>© 2025 DJ Yusif | <a href="mailto:20djyusif13@gmail.com">Contact</a></p>
+    <p>&copy; 2025 DJ Yusif. All rights reserved.</p>
+    <p><a href="mailto:contact@djyusif.com">Contact Us</a></p>
   </footer>
 
   <script>
-    // Dark mode
+    // Dark Mode Toggle Button
     document.getElementById('darkModeToggle').addEventListener('click', function () {
       document.body.classList.toggle('dark-mode');
+    });
+  </script>
+
+</body>
+</html>
