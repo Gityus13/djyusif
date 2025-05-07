@@ -47,7 +47,7 @@
       width: 100px;
     }
     header h1 {
-      font-size: 2.5rem;
+      font-size: 3rem;
       color: #ffffff;
       text-shadow: 0 0 10px #00ff99;
     }
@@ -72,14 +72,6 @@
       cursor: pointer;
       border: none;
     }
-    .language-selector {
-      background-color: transparent;
-      color: white;
-      border: 1px solid #fff;
-      padding: 5px 10px;
-      cursor: pointer;
-      border-radius: 5px;
-    }
     section {
       min-height: 300px;
       padding: 60px 20px;
@@ -88,7 +80,7 @@
     }
     h2 {
       color: #1e90ff;
-      font-size: 2rem;
+      font-size: 2.5rem;
       margin-bottom: 20px;
     }
     .gallery {
@@ -99,8 +91,7 @@
       margin-top: 30px;
     }
     .gallery img {
-      width: 100%;
-      max-width: 280px;
+      width: 280px;
       border-radius: 10px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.4);
       transition: transform 0.3s ease;
@@ -142,54 +133,6 @@
       max-width: 100%;
       border-radius: 12px;
     }
-
-    /* Mobile Optimization */
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 2rem;
-      }
-
-      nav {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      nav a {
-        margin: 10px 0;
-      }
-
-      section {
-        padding: 30px 10px;
-      }
-
-      h2 {
-        font-size: 1.8rem;
-      }
-
-      .gallery img {
-        width: 100%;
-        max-width: 100%;
-      }
-
-      .testimonial, #booking-form {
-        padding: 10px;
-        margin: 15px;
-      }
-
-      #backToTop {
-        bottom: 20px;
-        right: 20px;
-        font-size: 18px;
-      }
-
-      footer {
-        padding: 10px;
-      }
-
-      footer a {
-        font-size: 1rem;
-      }
-    }
   </style>
 </head>
 <body>
@@ -200,39 +143,33 @@
 
 <header>
   <img src="dj-logo.png" alt="DJ Yusif Logo" class="logo">
-  <h1 id="header-title">DJ Yusif</h1>
-  <p id="header-description">Official DJ Website – Beats. Lights. Energy.</p>
-  <select class="language-selector" id="language-select">
-    <option value="en">English</option>
-    <option value="az">Azərbaycan</option>
-    <option value="ru">Русский</option>
-  </select>
+  <h1>DJ Yusif</h1>
+  <p>Official DJ Website – Beats. Lights. Energy.</p>
 </header>
 
 <nav>
-  <a href="#about" id="about-link">About</a>
-  <a href="#services" id="services-link">Services</a>
-  <a href="#gallery" id="gallery-link">Photos</a>
-  <a href="#products" id="products-link">Products</a>
-  <a href="#calendar" id="calendar-link">Calendar</a>
-  <a href="#playlist" id="playlist-link">Playlist</a>
-  <a href="#promo" id="promo-link">Promo</a>
-  <a href="#contact" id="contact-link">Contact</a>
-  <a href="https://www.instagram.com/djyusifofficial/" target="_blank" id="instagram-link">Instagram</a>
+  <a href="#about">About</a>
+  <a href="#services">Services</a>
+  <a href="#gallery">Photos</a>
+  <a href="#products">Products</a>
+  <a href="#calendar">Calendar</a>
+  <a href="#playlist">Playlist</a>
+  <a href="#promo">Promo</a>
+  <a href="#contact">Contact</a>
 </nav>
 
 <section id="about">
-  <h2 id="about-title">About Me</h2>
-  <p id="about-description">I'm DJ Yusif, a pro DJ from Azerbaijan. I light up weddings, parties, and events with beats and energy like no one else.</p>
+  <h2>About Me</h2>
+  <p>I'm DJ Yusif, a pro DJ from Azerbaijan. I light up weddings, parties, and events with beats and energy like no one else.</p>
 </section>
 
 <section id="services">
-  <h2 id="services-title">Services</h2>
-  <p id="services-description">🎵 Music Mixing<br>💡 Lighting<br>🎤 Microphone Hosting<br>🔊 Loud Sound System</p>
+  <h2>Services</h2>
+  <p>🎵 Music Mixing<br>💡 Lighting<br>🎤 Microphone Hosting<br>🔊 Loud Sound System</p>
 </section>
 
 <section id="gallery">
-  <h2 id="gallery-title">My DJ Photos</h2>
+  <h2>My DJ Photos</h2>
   <div class="gallery">
     <img src="djlogo.jpg.png" alt="DJ Logo">
     <img src="newsong.jpg" alt="New Song">
@@ -241,67 +178,140 @@
 </section>
 
 <section id="products">
-  <h2 id="products-title">Products</h2>
-  <p id="products-description">Check out my exclusive DJ gear & merch!</p>
+  <h2>Products</h2>
+  <p>Check out my exclusive DJ gear & merch!</p>
 </section>
   
 <section id="playlist">
-  <h2 id="playlist-title">My Music Playlist</h2>
+  <h2>My Music Playlist</h2>
   <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0hXJxtPG3j508QX5DmTSyV" width="100%" height="380" frameborder="0" allowfullscreen></iframe>
 </section>
 
 <section id="promo">
-  <h2 id="promo-title">Promo Video</h2>
+  <h2>Promo Video</h2>
   <iframe width="560" height="315" src="https://www.youtube.com/embed/RzaYR4y8k_E" frameborder="0" allowfullscreen></iframe>
-  <a href="https://www.instagram.com/djyusifofficial/" target="_blank">Follow me on Instagram</a>
 </section>
 
 <section id="achievements">
-  <h2 id="achievements-title">My Achievements</h2>
+  <h2>My Achievements</h2>
   <ul>
-    <li id="achievement1">🏆 Best DJ of Baku - 2024</li>
-    <li id="achievement2">🎧 Performed at over 100+ events</li>
-    <li id="achievement3">📀 Released 5 original tracks</li>
+    <li>🏆 Best DJ of Baku - 2024</li>
+    <li>🎧 Performed at over 100+ events</li>
+    <li>📀 Released 5 original tracks</li>
   </ul>
 </section>
 
 <section id="booking">
-  <h2 id="booking-title">Book Me</h2>
+  <h2>Book Me</h2>
   <div style="margin-bottom: 20px;">
-    <button class="button" onclick="alert('Lighting Booking - $200')" id="lighting-button">Lighting 💡 - $200</button>
-    <button class="button" onclick="alert('Sound System Booking - $150')" id="sound-button">Sound System 🎶 - $150</button>
-    <button class="button" onclick="alert('Microphone Booking - $50')" id="mic-button">Microphone 🎤 - $50</button>
+    <button class="button" onclick="alert('Lighting Booking - $200')">Lighting 💡 - $200</button>
+    <button class="button" onclick="alert('Call Booking - $50')">Call 📞 - $50</button>
+    <button class="button" onclick="alert('Wedding Booking - $500')">Wedding 💍 - $500</button>
+  </div>
+  <div id="booking-form">
+    <form onsubmit="handleSubmit(event)">
+      <label for="event-date">Event Date</label>
+      <input type="date" id="event-date" name="event-date" required>
+      <label for="event-type">Event Type</label>
+      <select id="event-type" name="event-type" required>
+        <option>Wedding</option>
+        <option>Party</option>
+        <option>Corporate</option>
+        <option>Other</option>
+      </select>
+      <label><input type="checkbox"> Sound System</label>
+      <label><input type="checkbox"> Lighting</label>
+      <label><input type="checkbox"> Microphone</label>
+      <label><input type="checkbox" id="verification-checkbox" required> I agree to terms</label>
+      <button class="button" type="submit">Submit Booking</button>
+    </form>
+    <p id="success-message" style="color:lightgreen; display:none;">Booking submitted!</p>
   </div>
 </section>
 
+<section id="account">
+  <h2>Create Account</h2>
+  <form id="create-account-form" onsubmit="createAccount(event)">
+    <label for="username">Username</label>
+    <input type="text" id="username" name="username" required>
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required>
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" required>
+    <button class="button" type="submit">Create Account</button>
+  </form>
+  <p id="account-success" style="color:lightgreen; display:none;">Account created successfully!</p>
+  <p id="account-error" style="color:red; display:none;">Please fill in all fields correctly!</p>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p>📧 Email: <a href="mailto:20djyusif13@gmail.com">20djyusif13@gmail.com</a></p>
+  <div style="margin-top: 20px;">
+    <h3>Follow Me</h3>
+    <iframe src="https://www.instagram.com/ddjyusif/embed" width="320" height="400"></iframe>
+  </div>
+</section>
+
+<section>
+  <h2>DJ Brochure</h2>
+  <a class="button" href="brochure.pdf" download>📥 Download Brochure</a>
+</section>
+
+<section>
+  <h2>Listen to My Mix</h2>
+  <audio controls>
+    <source src="sample.mp3" type="audio/mpeg">
+    Your browser doesn't support audio playback.
+  </audio>
+</section>
+
 <footer>
-  <p>&copy; 2025 DJ Yusif. All Rights Reserved.</p>
+  <p>© 2025 DJ Yusif | <a href="mailto:20djyusif13@gmail.com">20djyusif13@gmail.com</a></p>
+  <div>
+    <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+  </div>
 </footer>
 
-<div id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</div>
+<button id="backToTop" onclick="window.scrollTo({top:0, behavior:'smooth'})">⬆</button>
 
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YOURID"></script>
 <script>
-// Language Switcher (JavaScript from previous example)
-document.getElementById('language-select').addEventListener('change', function(event) {
-  const selectedLanguage = event.target.value;
-  localStorage.setItem('selectedLanguage', selectedLanguage);
-  updateLanguage(selectedLanguage);
-});
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YOURID');
 
-// Load saved language from localStorage
-const savedLanguage = localStorage.getItem('selectedLanguage') || 'en';
-updateLanguage(savedLanguage);
-
-function updateLanguage(language) {
-  const elements = document.querySelectorAll('[id]');
-  elements.forEach((element) => {
-    const key = element.id;
-    if (languageData[language] && languageData[language][key]) {
-      element.innerHTML = languageData[language][key];
+  function handleSubmit(event) {
+    event.preventDefault();
+    const checkbox = document.getElementById('verification-checkbox');
+    if (checkbox.checked) {
+      document.getElementById('success-message').style.display = 'block';
+    } else {
+      alert('Please confirm terms.');
     }
-  });
-}
-</script>
+  }
 
+  function createAccount(event) {
+    event.preventDefault();
+    const username = document.getElementById('username').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    if (username && email && password) {
+      document.getElementById('account-success').style.display = 'block';
+      document.getElementById('account-error').style.display = 'none';
+    } else {
+      document.getElementById('account-error').style.display = 'block';
+    }
+  }
+
+  window.onscroll = () => {
+    const btn = document.getElementById('backToTop');
+    btn.style.display = (document.documentElement.scrollTop > 300) ? 'block' : 'none';
+  };
+</script>
 </body>
 </html>
