@@ -1,1 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DJ Yusif | Official Website</title>
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: black;
+      color: #fff;
+      scroll-behavior: smooth;
+    }
+
+    /* Video background */
+    .video-background {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    header {
+      background: rgba(0, 0, 0, 0.6);
+      text-align: center;
+      padding: 60px 20px;
+      position: relative;
+    }
+    header .logo {
+      position: absolute;
+      top: 20px; left: 20px;
+      width: 100px;
+    }
+    header h1 {
+      font-size: 3rem;
+      color: #fff;
+      text-shadow: 0 0 10px #00ff99;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      background-color: #121212;
+      padding: 15px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav a, .button {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      background: #1e90ff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      border: none;
+    }
+    section {
+      max-width: 900px;
+      margin: auto;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    h2 {
+      color: #1e90ff;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+    .gallery {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .gallery img {
+      width: 280px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      transition: transform 0.3s ease;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    .card {
+      background: #222;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 20px auto;
+      max-width: 600px;
+    }
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      border: 1px solid #1e90ff;
+      background: #111;
+      color: white;
+    }
+    footer {
+      background: #0a1d37;
+      text-align: center;
+      padding: 20px;
+    }
+    #backToTop {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      font-size: 20px;
+      background: #1e90ff;
+      padding: 10px 15px;
+      border-radius: 50%;
+      display: none;
+      cursor: pointer;
+      color: white;
+    }
+    iframe, audio {
+      max-width: 100%;
+      border-radius: 12px;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    ul li {
+      margin: 10px 0;
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Background Video -->
+<video class="video-background" autoplay loop muted playsinline>
+  <source src="dj_background.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
+
+<header>
+  <img src="dj-logo.png" alt="DJ Yusif Logo" class="logo" />
+  <h1>DJ Yusif</h1>
+  <p>Official DJ Website – Beats. Lights. Energy.</p>
+</header>
+
+<nav>
+  <a href="#about">About</a>
+  <a href="#services">Services</a>
+  <a href="#gallery">Photos</a>
+  <a href="#products">Products</a>
+  <a href="#playlist">Playlist</a>
+  <a href="#promo">Promo</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<section id="about">
+  <h2>About Me</h2>
+  <p>I'm DJ Yusif, a pro DJ from Azerbaijan. I light up weddings, parties, and events with beats and energy like no one else.</p>
+</section>
+
+<section id="services">
+  <h2>Services</h2>
+  <p>🎵 Music Mixing<br>💡 Lighting<br>🎤 Microphone Hosting<br>🔊 Loud Sound System</p>
+</section>
+
+<section id="gallery">
+  <h2>My DJ Photos</h2>
+  <div class="gallery">
+    <img src="djlogo.jpg.png" alt="DJ Logo" />
+    <img src="newsong.jpg" alt="New Song" />
+    <img src="meandme.png" alt="Me remixing the song" />
+  </div>
+</section>
+
+<section id="products">
+  <h2>Products</h2>
+  <p>Check out my exclusive DJ gear & merch!</p>
+</section>
+
+<section id="playlist">
+  <h2>My Music Playlist</h2>
+  <iframe src="https://open.spotify.com/embed/playlist/0hXJxtPG3j508QX5DmTSyV" width="100%" height="380" frameborder="0" allowfullscreen></iframe>
+</section>
+
+<section id="promo">
+  <h2>Promo Video</h2>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/RzaYR4y8k_E" frameborder="0" allowfullscreen></iframe>
+</section>
+
+<section id="achievements">
+  <h2>My Achievements</h2>
+  <ul>
+    <li>🏆 Best DJ of Baku - 2024</li>
+    <li>🎧 Performed at 100+ events</li>
+    <li>📀 Released 5 original tracks</li>
+  </ul>
+</section>
+
+<!-- Testimonial Section -->
+<section id="testimonials">
+  <h2>What My Fans Say</h2>
+  <div class="testimonial">
+    <p>"DJ Yusif made my wedding unforgettable with the best beats!"</p>
+    <p>- Aydan, Bride</p>
+  </div>
+  <div class="testimonial">
+    <p>"The music, lights, and vibe were just perfect. Highly recommend!"</p>
+    <p>- Farid, Groom</p>
+  </div>
+</section>
+
+<!-- Fan Engagement Section -->
+<section id="fan-engagement">
+  <h2>Get In Touch!</h2>
+  <p>Want to reach out? Drop your message below!</p>
+  <form action="#" method="POST">
+    <label for="name">Your Name:</label>
+    <input type="text" id="name" name="name" required>
+    <label for="message">Your Message:</label>
+    <textarea id="message" name="message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+  
+  <section id="booking">
+  <h2>Book Me</h2>
+  <div style="margin-bottom: 20px;">
+    <button class="button" onclick="alert('Lighting Booking - $200')">Lighting 💡 - $200</button>
+    <button class="button" onclick="alert('Call Booking - $50')">Call 📞 - $50</button>
+    <button class="button" onclick="alert('Wedding Booking - $500')">Wedding 💍 - $500</button>
+  </div>
+  <div class="card">
+    <form onsubmit="handleSubmit(event)">
+      <label for="event-date">Event Date</label>
+      <input type="date" id="event-date" name="event-date" required>
+      <label for="event-type">Event Type</label>
+      <select id="event-type" name="event-type" required>
+        <option value="">Select type</option>
+        <option>Wedding</option>
+        <option>Party</option>
+        <option>Corporate</option>
+        <option>Other</option>
+      </select>
+      <label><input type="checkbox" /> Sound System</label><br>
+      <label><input type="checkbox" /> Lighting</label><br>
+      <label><input type="checkbox" /> Microphone</label><br>
+      <label><input type="checkbox" id="verification-checkbox" required /> I agree to terms</label><br><br>
+      <button class="button" type="submit">Submit Booking</button>
+    </form>
+    <p id="success-message" style="color: lightgreen; display: none;">Booking submitted!</p>
+  </div>
+</section>
+
+<section id="account">
+  <h2>Create Account</h2>
+  <div class="card">
+    <form id="create-account-form" onsubmit="createAccount(event)">
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" required />
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required />
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required />
+      <button class="button" type="submit">Create Account</button>
+    </form>
+    <p id="account-success" style="color: lightgreen; display: none;">Account created successfully!</p>
+    <p id="account-error" style="color: red; display: none;">Please fill in all fields correctly!</p>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p>📧 Email: <a href="mailto:20djyusif13@gmail.com">20djyusif13@gmail.com</a></p>
+  <div style="margin-top: 20px;">
+    <h3>Follow Me</h3>
+    <iframe src="https://www.instagram.com/ddjyusif/embed" width="320" height="400"></iframe>
+  </div>
+</section>
+
+<section>
+  <h2>DJ Brochure</h2>
+  <a class="button" href="brochure.pdf" download>📥 Download Brochure</a>
+</section>
+
+<section>
+  <h2>My Latest Tracks</h2>
+  <audio controls>
+    <source src="dj-yusif-latest-track.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+</section>
+
+<footer>
+  <p>© 2025 DJ Yusif | All Rights Reserved</p>
+</footer>
+
+<!-- Back-to-Top Button -->
+<button id="backToTop" onclick="scrollToTop()">↑</button>
+
+<script>
+  // Back-to-Top button functionality
+  window.onscroll = function () {
+    const backToTop = document.getElementById('backToTop');
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+      backToTop.style.display = 'block';
+    } else {
+      backToTop.style.display = 'none';
+    }
+  };
+
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    document.getElementById("success-message").style.display = 'block';
+  }
+
+  function createAccount(event) {
+    event.preventDefault();
+    const username = document.getElementById('username').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    if (username && email && password) {
+      document.getElementById("account-success").style.display = 'block';
+    } else {
+      document.getElementById("account-error").style.display = 'block';
+    }
+  }
+</script>
+
+</body>
+</html>. 
