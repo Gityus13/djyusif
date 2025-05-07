@@ -229,6 +229,21 @@
   </div>
 </section>
 
+<section id="account">
+  <h2>Create Account</h2>
+  <form id="create-account-form" onsubmit="createAccount(event)">
+    <label for="username">Username</label>
+    <input type="text" id="username" name="username" required>
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required>
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" required>
+    <button class="button" type="submit">Create Account</button>
+  </form>
+  <p id="account-success" style="color:lightgreen; display:none;">Account created successfully!</p>
+  <p id="account-error" style="color:red; display:none;">Please fill in all fields correctly!</p>
+</section>
+
 <section id="contact">
   <h2>Contact</h2>
   <p>📧 Email: <a href="mailto:20djyusif13@gmail.com">20djyusif13@gmail.com</a></p>
@@ -276,6 +291,20 @@
       document.getElementById('success-message').style.display = 'block';
     } else {
       alert('Please confirm terms.');
+    }
+  }
+
+  function createAccount(event) {
+    event.preventDefault();
+    const username = document.getElementById('username').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    if (username && email && password) {
+      document.getElementById('account-success').style.display = 'block';
+      document.getElementById('account-error').style.display = 'none';
+    } else {
+      document.getElementById('account-error').style.display = 'block';
     }
   }
 
