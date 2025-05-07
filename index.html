@@ -20,6 +20,7 @@
       background: black;
       color: #fff;
       scroll-behavior: smooth;
+      padding-top: 50px; /* Prevent overlap with fixed nav */
     }
 
     /* Video background */
@@ -57,6 +58,7 @@
       position: sticky;
       top: 0;
       z-index: 1000;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
     }
     nav a, .button {
       color: white;
@@ -67,6 +69,10 @@
       border-radius: 5px;
       cursor: pointer;
       border: none;
+      transition: background 0.3s ease;
+    }
+    nav a:hover, .button:hover {
+      background: #00bfff;
     }
     section {
       max-width: 900px;
@@ -138,6 +144,52 @@
     ul li {
       margin: 10px 0;
       font-size: 1.2rem;
+    }
+
+    /* Media Queries for Mobile */
+    @media screen and (max-width: 768px) {
+      header h1 {
+        font-size: 2.5rem;
+      }
+      header p {
+        font-size: 1.2rem;
+      }
+      nav {
+        flex-direction: column;
+      }
+      .gallery img {
+        width: 100%;
+        max-width: 300px;
+      }
+      .card {
+        padding: 15px;
+      }
+      .button {
+        width: 100%;
+        font-size: 1rem;
+        padding: 12px 20px;
+      }
+      footer {
+        font-size: 1rem;
+      }
+    }
+
+    /* Mobile specific adjustments for navigation */
+    @media screen and (max-width: 480px) {
+      .button {
+        padding: 12px;
+      }
+      .gallery img {
+        width: 100%;
+      }
+      nav a {
+        width: 100%;
+        text-align: center;
+        padding: 15px;
+      }
+      header h1 {
+        font-size: 2rem;
+      }
     }
   </style>
 </head>
@@ -251,97 +303,37 @@
         <option>Wedding</option>
         <option>Party</option>
         <option>Corporate</option>
-        <option>Other</option>
       </select>
-      <label><input type="checkbox" /> Sound System</label><br>
-      <label><input type="checkbox" /> Lighting</label><br>
-      <label><input type="checkbox" /> Microphone</label><br>
-      <label><input type="checkbox" id="verification-checkbox" required /> I agree to terms</label><br><br>
-      <button class="button" type="submit">Submit Booking</button>
+      <button type="submit">Book Now</button>
     </form>
-    <p id="success-message" style="color: lightgreen; display: none;">Booking submitted!</p>
   </div>
 </section>
 
-<section id="account">
-  <h2>Create Account</h2>
-  <div class="card">
-    <form id="create-account-form" onsubmit="createAccount(event)">
-      <label for="username">Username</label>
-      <input type="text" id="username" name="username" required />
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required />
-      <label for="password">Password</label>
-      <input type="password" id="password" name="password" required />
-      <button class="button" type="submit">Create Account</button>
-    </form>
-    <p id="account-success" style="color: lightgreen; display: none;">Account created successfully!</p>
-    <p id="account-error" style="color: red; display: none;">Please fill in all fields correctly!</p>
-  </div>
-</section>
-
-<section id="contact">
-  <h2>Contact</h2>
-  <p>📧 Email: <a href="mailto:20djyusif13@gmail.com">20djyusif13@gmail.com</a></p>
-  <div style="margin-top: 20px;">
-    <h3>Follow Me</h3>
-    <iframe src="https://www.instagram.com/ddjyusif/embed" width="320" height="400"></iframe>
-  </div>
-</section>
-
-<section>
-  <h2>DJ Brochure</h2>
-  <a class="button" href="brochure.pdf" download>📥 Download Brochure</a>
-</section>
-
-<section>
-  <h2>My Latest Tracks</h2>
-  <audio controls>
-    <source src="dj-yusif-latest-track.mp3" type="audio/mp3">
-    Your browser does not support the audio element.
-  </audio>
-</section>
-
+<!-- Footer -->
 <footer>
-  <p>© 2025 DJ Yusif | All Rights Reserved</p>
+  <p>&copy; 2025 DJ Yusif. All rights reserved. <a href="mailto:contact@djyusif.com">Contact</a></p>
 </footer>
 
-<!-- Back-to-Top Button -->
-<button id="backToTop" onclick="scrollToTop()">↑</button>
+<!-- Back to Top Button -->
+<button id="backToTop" onclick="window.scrollTo(0, 0)">↑</button>
 
 <script>
-  // Back-to-Top button functionality
-  window.onscroll = function () {
-    const backToTop = document.getElementById('backToTop');
+  // Show back to top button on scroll
+  window.onscroll = function() {
+    let btn = document.getElementById("backToTop");
     if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-      backToTop.style.display = 'block';
+      btn.style.display = "block";
     } else {
-      backToTop.style.display = 'none';
+      btn.style.display = "none";
     }
   };
 
-  function scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-
+  // Form submission logic
   function handleSubmit(event) {
     event.preventDefault();
-    document.getElementById("success-message").style.display = 'block';
-  }
-
-  function createAccount(event) {
-    event.preventDefault();
-    const username = document.getElementById('username').value;
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-
-    if (username && email && password) {
-      document.getElementById("account-success").style.display = 'block';
-    } else {
-      document.getElementById("account-error").style.display = 'block';
-    }
+    alert("Thank you for your booking!");
   }
 </script>
 
 </body>
-</html>. 
+</html>
