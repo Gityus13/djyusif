@@ -143,13 +143,6 @@
 </head>
 <body>
 
-<!-- Language Selector -->
-<select id="language-select" onchange="changeLanguage()">
-  <option value="en">English</option>
-  <option value="az">Azerbaijani</option>
-  <option value="ru">Russian</option>
-</select>
-
 <!-- Background Video -->
 <video class="video-background" autoplay loop muted playsinline>
   <source src="dj_background.mp4" type="video/mp4" />
@@ -158,32 +151,32 @@
 
 <header>
   <img src="dj-logo.png" alt="DJ Yusif Logo" class="logo" />
-  <h1 id="header-title">DJ Yusif</h1>
-  <p id="header-subtitle">Official DJ Website – Beats. Lights. Energy.</p>
+  <h1>DJ Yusif</h1>
+  <p>Official DJ Website – Beats. Lights. Energy.</p>
 </header>
 
 <nav>
-  <a href="#about" id="nav-about">About</a>
-  <a href="#services" id="nav-services">Services</a>
-  <a href="#gallery" id="nav-gallery">Photos</a>
-  <a href="#products" id="nav-products">Products</a>
-  <a href="#playlist" id="nav-playlist">Playlist</a>
-  <a href="#promo" id="nav-promo">Promo</a>
-  <a href="#contact" id="nav-contact">Contact</a>
+  <a href="#about">About</a>
+  <a href="#services">Services</a>
+  <a href="#gallery">Photos</a>
+  <a href="#products">Products</a>
+  <a href="#playlist">Playlist</a>
+  <a href="#promo">Promo</a>
+  <a href="#contact">Contact</a>
 </nav>
 
 <section id="about">
-  <h2 id="about-title">About Me</h2>
-  <p id="about-text">I'm DJ Yusif, a pro DJ from Azerbaijan. I light up weddings, parties, and events with beats and energy like no one else.</p>
+  <h2>About Me</h2>
+  <p>I'm DJ Yusif, a pro DJ from Azerbaijan. I light up weddings, parties, and events with beats and energy like no one else.</p>
 </section>
 
 <section id="services">
-  <h2 id="services-title">Services</h2>
-  <p id="services-text">🎵 Music Mixing<br>💡 Lighting<br>🎤 Microphone Hosting<br>🔊 Loud Sound System</p>
+  <h2>Services</h2>
+  <p>🎵 Music Mixing<br>💡 Lighting<br>🎤 Microphone Hosting<br>🔊 Loud Sound System</p>
 </section>
 
 <section id="gallery">
-  <h2 id="gallery-title">My DJ Photos</h2>
+  <h2>My DJ Photos</h2>
   <div class="gallery">
     <img src="djlogo.jpg.png" alt="DJ Logo" />
     <img src="newsong.jpg" alt="New Song" />
@@ -191,94 +184,164 @@
   </div>
 </section>
 
-<section id="contact">
-  <h2 id="contact-title">Contact</h2>
-  <p>📧 Email: <a href="mailto:20djyusif13@gmail.com">20djyusif13@gmail.com</a></p>
+<section id="products">
+  <h2>Products</h2>
+  <p>Check out my exclusive DJ gear & merch!</p>
 </section>
+
+<section id="playlist">
+  <h2>My Music Playlist</h2>
+  <iframe src="https://open.spotify.com/embed/playlist/0hXJxtPG3j508QX5DmTSyV" width="100%" height="380" frameborder="0" allowfullscreen></iframe>
+</section>
+
+<section id="promo">
+  <h2>Promo Video</h2>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/RzaYR4y8k_E" frameborder="0" allowfullscreen></iframe>
+</section>
+
+<section id="achievements">
+  <h2>My Achievements</h2>
+  <ul>
+    <li>🏆 Best DJ of Baku - 2024</li>
+    <li>🎧 Performed at 100+ events</li>
+    <li>📀 Released 5 original tracks</li>
+  </ul>
+</section>
+
+<!-- Testimonial Section -->
+<section id="testimonials">
+  <h2>What My Fans Say</h2>
+  <div class="testimonial">
+    <p>"DJ Yusif made my wedding unforgettable with the best beats!"</p>
+    <p>- Aydan, Bride</p>
+  </div>
+  <div class="testimonial">
+    <p>"The music, lights, and vibe were just perfect. Highly recommend!"</p>
+    <p>- Farid, Groom</p>
+  </div>
+</section>
+
+<!-- Fan Engagement Section -->
+<section id="fan-engagement">
+  <h2>Get In Touch!</h2>
+  <p>Want to reach out? Drop your message below!</p>
+  <form action="#" method="POST">
+    <label for="name">Your Name:</label>
+    <input type="text" id="name" name="name" required>
+    <label for="message">Your Message:</label>
+    <textarea id="message" name="message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+  
+  <section id="booking">
+  <h2>Book Me</h2>
+  <div style="margin-bottom: 20px;">
+    <button class="button" onclick="alert('Lighting Booking - $200')">Lighting 💡 - $200</button>
+    <button class="button" onclick="alert('Call Booking - $50')">Call 📞 - $50</button>
+    <button class="button" onclick="alert('Wedding Booking - $500')">Wedding 💍 - $500</button>
+  </div>
+  <div class="card">
+    <form onsubmit="handleSubmit(event)">
+      <label for="event-date">Event Date</label>
+      <input type="date" id="event-date" name="event-date" required>
+      <label for="event-type">Event Type</label>
+      <select id="event-type" name="event-type" required>
+        <option value="">Select type</option>
+        <option>Wedding</option>
+        <option>Party</option>
+        <option>Corporate</option>
+        <option>Other</option>
+      </select>
+      <label><input type="checkbox" /> Sound System</label><br>
+      <label><input type="checkbox" /> Lighting</label><br>
+      <label><input type="checkbox" /> Microphone</label><br>
+      <label><input type="checkbox" id="verification-checkbox" required /> I agree to terms</label><br><br>
+      <button class="button" type="submit">Submit Booking</button>
+    </form>
+    <p id="success-message" style="color: lightgreen; display: none;">Booking submitted!</p>
+  </div>
+</section>
+
+<section id="account">
+  <h2>Create Account</h2>
+  <div class="card">
+    <form id="create-account-form" onsubmit="createAccount(event)">
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" required />
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required />
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required />
+      <button class="button" type="submit">Create Account</button>
+    </form>
+    <p id="account-success" style="color: lightgreen; display: none;">Account created successfully!</p>
+    <p id="account-error" style="color: red; display: none;">Please fill in all fields correctly!</p>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p>📧 Email: <a href="mailto:20djyusif13@gmail.com">20djyusif13@gmail.com</a></p>
+  <div style="margin-top: 20px;">
+    <h3>Follow Me</h3>
+    <iframe src="https://www.instagram.com/ddjyusif/embed" width="320" height="400"></iframe>
+  </div>
+</section>
+
+<section>
+  <h2>DJ Brochure</h2>
+  <a class="button" href="brochure.pdf" download>📥 Download Brochure</a>
+</section>
+
+<section>
+  <h2>My Latest Tracks</h2>
+  <audio controls>
+    <source src="dj-yusif-latest-track.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+</section>
+
+<footer>
+  <p>© 2025 DJ Yusif | All Rights Reserved</p>
+</footer>
 
 <!-- Back-to-Top Button -->
 <button id="backToTop" onclick="scrollToTop()">↑</button>
 
 <script>
-  const languages = {
-    en: {
-      headerTitle: "DJ Yusif",
-      headerSubtitle: "Official DJ Website – Beats. Lights. Energy.",
-      navAbout: "About",
-      navServices: "Services",
-      navGallery: "Photos",
-      navProducts: "Products",
-      navPlaylist: "Playlist",
-      navPromo: "Promo",
-      navContact: "Contact",
-      aboutTitle: "About Me",
-      aboutText: "I'm DJ Yusif, a pro DJ from Azerbaijan. I light up weddings, parties, and events with beats and energy like no one else.",
-      servicesTitle: "Services",
-      servicesText: "🎵 Music Mixing<br>💡 Lighting<br>🎤 Microphone Hosting<br>🔊 Loud Sound System",
-      galleryTitle: "My DJ Photos",
-      contactTitle: "Contact"
-    },
-    az: {
-      headerTitle: "DJ Yusif",
-      headerSubtitle: "Rəsmi DJ Vebsaytı – Ritm. İşıqlar. Enerji.",
-      navAbout: "Haqqında",
-      navServices: "Xidmətlər",
-      navGallery: "Şəkillər",
-      navProducts: "Məhsullar",
-      navPlaylist: "Çalma siyahısı",
-      navPromo: "Promo",
-      navContact: "Əlaqə",
-      aboutTitle: "Haqqımda",
-      aboutText: "Mən DJ Yusif, Azərbaycandan olan peşəkar DJ-yəm. Mən toyları, partiləri və tədbirləri heç kəsin bacarmadığı qədər ritm və enerji ilə işıqlandırıram.",
-      servicesTitle: "Xidmətlər",
-      servicesText: "🎵 Musiqi Qarışıqları<br>💡 İşıqlandırma<br>🎤 Mikrofonla Aparıcılıq<br>🔊 Yüksək Səs Sistemi",
-      galleryTitle: "Mənim DJ Şəkillərim",
-      contactTitle: "Əlaqə"
-    },
-    ru: {
-      headerTitle: "DJ Yusif",
-      headerSubtitle: "Официальный сайт DJ – Биты. Огни. Энергия.",
-      navAbout: "О себе",
-      navServices: "Услуги",
-      navGallery: "Фотографии",
-      navProducts: "Продукты",
-      navPlaylist: "Плейлист",
-      navPromo: "Промо",
-      navContact: "Контакты",
-      aboutTitle: "Обо мне",
-      aboutText: "Я DJ Yusif, профессиональный DJ из Азербайджана. Я оживляю свадьбы, вечеринки и мероприятия с ритмами и энергией, как никто другой.",
-      servicesTitle: "Услуги",
-      servicesText: "🎵 Смешивание музыки<br>💡 Освещение<br>🎤 Ведущие микрофоны<br>🔊 Мощная звуковая система",
-      galleryTitle: "Мои DJ фотографии",
-      contactTitle: "Контакты"
+  // Back-to-Top button functionality
+  window.onscroll = function () {
+    const backToTop = document.getElementById('backToTop');
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+      backToTop.style.display = 'block';
+    } else {
+      backToTop.style.display = 'none';
     }
   };
 
-  function changeLanguage() {
-    const language = document.getElementById('language-select').value;
-    const content = languages[language];
-
-    // Update content based on selected language
-    document.getElementById('header-title').innerText = content.headerTitle;
-    document.getElementById('header-subtitle').innerText = content.headerSubtitle;
-    document.getElementById('nav-about').innerText = content.navAbout;
-    document.getElementById('nav-services').innerText = content.navServices;
-    document.getElementById('nav-gallery').innerText = content.navGallery;
-    document.getElementById('nav-products').innerText = content.navProducts;
-    document.getElementById('nav-playlist').innerText = content.navPlaylist;
-    document.getElementById('nav-promo').innerText = content.navPromo;
-    document.getElementById('nav-contact').innerText = content.navContact;
-    document.getElementById('about-title').innerText = content.aboutTitle;
-    document.getElementById('about-text').innerHTML = content.aboutText;
-    document.getElementById('services-title').innerText = content.servicesTitle;
-    document.getElementById('services-text').innerHTML = content.servicesText;
-    document.getElementById('gallery-title').innerText = content.galleryTitle;
-    document.getElementById('contact-title').innerText = content.contactTitle;
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  // Initial language load (default to English)
-  changeLanguage();
+  function handleSubmit(event) {
+    event.preventDefault();
+    document.getElementById("success-message").style.display = 'block';
+  }
+
+  function createAccount(event) {
+    event.preventDefault();
+    const username = document.getElementById('username').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    if (username && email && password) {
+      document.getElementById("account-success").style.display = 'block';
+    } else {
+      document.getElementById("account-error").style.display = 'block';
+    }
+  }
 </script>
 
 </body>
-</html>
+</html>. 
