@@ -253,6 +253,7 @@
 <section id="promo">
   <h2 id="promo-title">Promo Video</h2>
   <iframe width="560" height="315" src="https://www.youtube.com/embed/RzaYR4y8k_E" frameborder="0" allowfullscreen></iframe>
+  <a href="https://www.instagram.com/djyusifofficial/" target="_blank">Follow me on Instagram</a>
 </section>
 
 <section id="achievements">
@@ -268,127 +269,39 @@
   <h2 id="booking-title">Book Me</h2>
   <div style="margin-bottom: 20px;">
     <button class="button" onclick="alert('Lighting Booking - $200')" id="lighting-button">Lighting 💡 - $200</button>
-    <button class="button" onclick="alert('Call Booking - $50')" id="call-button">Call 📞 - $50</button>
-    <button class="button" onclick="alert('Wedding Booking - $500')" id="wedding-button">Wedding 💍 - $500</button>
+    <button class="button" onclick="alert('Sound System Booking - $150')" id="sound-button">Sound System 🎶 - $150</button>
+    <button class="button" onclick="alert('Microphone Booking - $50')" id="mic-button">Microphone 🎤 - $50</button>
   </div>
-  <div id="booking-form">
-    <form onsubmit="handleSubmit(event)">
-      <label for="event-date" id="event-date-label">Event Date</label>
-      <input type="date" id="event-date" name="event-date" required>
-      <label for="event-type" id="event-type-label">Event Type</label>
-      <select id="event-type" name="event-type" required>
-        <option>Wedding</option>
-        <option>Party</option>
-        <option>Corporate</option>
-        <option>Other</option>
-      </select>
-      <label><input type="checkbox" id="sound-system"> Sound System</label>
-      <label><input type="checkbox" id="lighting"> Lighting</label>
-      <label><input type="checkbox" id="microphone"> Microphone</label>
-      <label><input type="checkbox" id="verification-checkbox" required> I agree to terms</label>
-      <button class="button" type="submit">Submit Booking</button>
-    </form>
-    <p id="success-message" style="color:lightgreen; display:none;">Booking submitted!</p>
-  </div>
-</section>
-
-<section id="account">
-  <h2 id="account-title">Account</h2>
-  <button class="button" id="login-button">Login</button>
 </section>
 
 <footer>
-  <p>&copy; 2025 DJ Yusif. All rights reserved.</p>
+  <p>&copy; 2025 DJ Yusif. All Rights Reserved.</p>
 </footer>
 
+<div id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</div>
+
 <script>
-  // Language change functionality
-  const languageData = {
-    en: {
-      "header-title": "DJ Yusif",
-      "header-description": "Official DJ Website – Beats. Lights. Energy.",
-      "about-title": "About Me",
-      "about-description": "I'm DJ Yusif, a pro DJ from Azerbaijan. I light up weddings, parties, and events with beats and energy like no one else.",
-      "services-title": "Services",
-      "services-description": "🎵 Music Mixing<br>💡 Lighting<br>🎤 Microphone Hosting<br>🔊 Loud Sound System",
-      "gallery-title": "My DJ Photos",
-      "products-title": "Products",
-      "products-description": "Check out my exclusive DJ gear & merch!",
-      "playlist-title": "My Music Playlist",
-      "promo-title": "Promo Video",
-      "achievements-title": "My Achievements",
-      "booking-title": "Book Me",
-      "account-title": "Account",
-      "instagram-link": "Instagram"
-    },
-    az: {
-      "header-title": "DJ Yusif",
-      "header-description": "Rəsmi DJ Vebsaytı – Ritmlər. İşıqlar. Enerji.",
-      "about-title": "Haqqımda",
-      "about-description": "Mən DJ Yusifəm, Azərbaycanlı bir DJ-yəm. Toyları, partiləri və tədbirləri ritm və enerji ilə işıqlandırıram.",
-      "services-title": "Xidmətlər",
-      "services-description": "🎵 Musiqi qarışdırma<br>💡 İşıqlandırma<br>🎤 Mikrofon xidmətləri<br>🔊 Yüksək səs sistemi",
-      "gallery-title": "Mənim DJ Şəkillərim",
-      "products-title": "Məhsullar",
-      "products-description": "Eksklüziv DJ alətləri və malları ilə tanış olun!",
-      "playlist-title": "Mənim Musiqi Siyahım",
-      "promo-title": "Promo Video",
-      "achievements-title": "Mənim Nailiyyətlərim",
-      "booking-title": "Məni Yerləşdir",
-      "account-title": "Hesab",
-      "instagram-link": "İnstagram"
-    },
-    ru: {
-      "header-title": "DJ Yusif",
-      "header-description": "Официальный сайт DJ – Биты. Свет. Энергия.",
-      "about-title": "Обо мне",
-      "about-description": "Я DJ Yusif, профессиональный DJ из Азербайджана. Я освещаю свадьбы, вечеринки и мероприятия битами и энергией, как никто другой.",
-      "services-title": "Услуги",
-      "services-description": "🎵 Музыкальное смешивание<br>💡 Освещение<br>🎤 Ведущие микрофоны<br>🔊 Система громкой связи",
-      "gallery-title": "Мои DJ Фотографии",
-      "products-title": "Продукты",
-      "products-description": "Ознакомьтесь с моими эксклюзивными DJ-аксессуарами и мерчем!",
-      "playlist-title": "Мой Музыкальный Плейлист",
-      "promo-title": "Промо Видео",
-      "achievements-title": "Мои Достижения",
-      "booking-title": "Забронировать меня",
-      "account-title": "Аккаунт",
-      "instagram-link": "Инстаграм"
+// Language Switcher (JavaScript from previous example)
+document.getElementById('language-select').addEventListener('change', function(event) {
+  const selectedLanguage = event.target.value;
+  localStorage.setItem('selectedLanguage', selectedLanguage);
+  updateLanguage(selectedLanguage);
+});
+
+// Load saved language from localStorage
+const savedLanguage = localStorage.getItem('selectedLanguage') || 'en';
+updateLanguage(savedLanguage);
+
+function updateLanguage(language) {
+  const elements = document.querySelectorAll('[id]');
+  elements.forEach((element) => {
+    const key = element.id;
+    if (languageData[language] && languageData[language][key]) {
+      element.innerHTML = languageData[language][key];
     }
-  };
-
-  // Event listener for language selection
-  document.getElementById('language-select').addEventListener('change', function(event) {
-    const selectedLanguage = event.target.value;
-    const elements = document.querySelectorAll('[id]');
-    elements.forEach((element) => {
-      const key = element.id;
-      if (languageData[selectedLanguage] && languageData[selectedLanguage][key]) {
-        element.innerHTML = languageData[selectedLanguage][key];
-      }
-    });
   });
-
-  // Scroll to top button
-  window.onscroll = function() {
-    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-      document.getElementById('backToTop').style.display = 'block';
-    } else {
-      document.getElementById('backToTop').style.display = 'none';
-    }
-  };
-
-  document.getElementById('backToTop').addEventListener('click', function() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-
-  // Handle booking form submission
-  function handleSubmit(event) {
-    event.preventDefault();
-    document.getElementById('success-message').style.display = 'block';
-  }
+}
 </script>
 
-<button id="backToTop" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">↑</button>
 </body>
 </html>
