@@ -144,7 +144,7 @@
 <body>
 
 <!-- Background Video -->
-<video class="video-background" autoplay loop muted playsinline>
+<video class="video-background" autoplay loop muted playsinline id="background-video">
   <source src="dj_background.mp4" type="video/mp4" />
   Your browser does not support the video tag.
 </video>
@@ -284,6 +284,14 @@
 <button id="backToTop" onclick="scrollToTop()">↑</button>
 
 <script>
+  // JavaScript to handle video autoplay on mobile
+  window.onload = function() {
+    var video = document.getElementById('background-video');
+    if (video.paused) {
+      video.play();
+    }
+  };
+
   // Back-to-Top button functionality
   window.onscroll = function () {
     const backToTop = document.getElementById('backToTop');
@@ -305,9 +313,9 @@
 
   function createAccount(event) {
     event.preventDefault();
-    const username = document.getElementById('username').value;
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
+    const username = document.getElementById("username").value;
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
 
     if (username && email && password) {
       document.getElementById("account-success").style.display = 'block';
