@@ -14,10 +14,141 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
   <style>
-    /* Your existing styles here */
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: black;
+      color: #fff;
+      scroll-behavior: smooth;
+    }
+
+    /* Video background */
+    .video-background {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    header {
+      background: rgba(0, 0, 0, 0.6);
+      text-align: center;
+      padding: 60px 20px;
+      position: relative;
+    }
+    header .logo {
+      position: absolute;
+      top: 20px; left: 20px;
+      width: 100px;
+    }
+    header h1 {
+      font-size: 3rem;
+      color: #fff;
+      text-shadow: 0 0 10px #00ff99;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      background-color: #121212;
+      padding: 15px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav a, .button {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      background: #1e90ff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      border: none;
+    }
+    section {
+      max-width: 900px;
+      margin: auto;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    h2 {
+      color: #1e90ff;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+    .gallery {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .gallery img {
+      width: 280px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      transition: transform 0.3s ease;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    .card {
+      background: #222;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 20px auto;
+      max-width: 600px;
+    }
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      border: 1px solid #1e90ff;
+      background: #111;
+      color: white;
+    }
+    footer {
+      background: #0a1d37;
+      text-align: center;
+      padding: 20px;
+    }
+    #backToTop {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      font-size: 20px;
+      background: #1e90ff;
+      padding: 10px 15px;
+      border-radius: 50%;
+      display: none;
+      cursor: pointer;
+      color: white;
+    }
+    iframe, audio {
+      max-width: 100%;
+      border-radius: 12px;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    ul li {
+      margin: 10px 0;
+      font-size: 1.2rem;
+    }
   </style>
 </head>
 <body>
+
+<!-- Language Selector -->
+<select id="language-select" onchange="changeLanguage()">
+  <option value="en">English</option>
+  <option value="az">Azerbaijani</option>
+  <option value="ru">Russian</option>
+</select>
 
 <!-- Background Video -->
 <video class="video-background" autoplay loop muted playsinline>
@@ -28,15 +159,8 @@
 <header>
   <img src="dj-logo.png" alt="DJ Yusif Logo" class="logo" />
   <h1 id="header-title">DJ Yusif</h1>
-  <p id="header-description">Official DJ Website – Beats. Lights. Energy.</p>
+  <p id="header-subtitle">Official DJ Website – Beats. Lights. Energy.</p>
 </header>
-
-<!-- Language Selector -->
-<select id="language-selector" onchange="changeLanguage(event)">
-  <option value="en">English</option>
-  <option value="ru">Russian</option>
-  <option value="az">Azeri</option>
-</select>
 
 <nav>
   <a href="#about" id="nav-about">About</a>
@@ -50,12 +174,12 @@
 
 <section id="about">
   <h2 id="about-title">About Me</h2>
-  <p id="about-description">I'm DJ Yusif, a pro DJ from Azerbaijan. I light up weddings, parties, and events with beats and energy like no one else.</p>
+  <p id="about-text">I'm DJ Yusif, a pro DJ from Azerbaijan. I light up weddings, parties, and events with beats and energy like no one else.</p>
 </section>
 
 <section id="services">
   <h2 id="services-title">Services</h2>
-  <p id="services-description">🎵 Music Mixing<br>💡 Lighting<br>🎤 Microphone Hosting<br>🔊 Loud Sound System</p>
+  <p id="services-text">🎵 Music Mixing<br>💡 Lighting<br>🎤 Microphone Hosting<br>🔊 Loud Sound System</p>
 </section>
 
 <section id="gallery">
@@ -67,128 +191,94 @@
   </div>
 </section>
 
-<section id="products">
-  <h2 id="products-title">Products</h2>
-  <p id="products-description">Check out my exclusive DJ gear & merch!</p>
+<section id="contact">
+  <h2 id="contact-title">Contact</h2>
+  <p>📧 Email: <a href="mailto:20djyusif13@gmail.com">20djyusif13@gmail.com</a></p>
 </section>
 
-<section id="playlist">
-  <h2 id="playlist-title">My Music Playlist</h2>
-  <iframe src="https://open.spotify.com/embed/playlist/0hXJxtPG3j508QX5DmTSyV" width="100%" height="380" frameborder="0" allowfullscreen></iframe>
-</section>
-
-<section id="promo">
-  <h2 id="promo-title">Promo Video</h2>
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/RzaYR4y8k_E" frameborder="0" allowfullscreen></iframe>
-</section>
-
-<section id="achievements">
-  <h2 id="achievements-title">My Achievements</h2>
-  <ul id="achievements-list">
-    <li>🏆 Best DJ of Baku - 2024</li>
-    <li>🎧 Performed at 100+ events</li>
-    <li>📀 Released 5 original tracks</li>
-  </ul>
-</section>
-
-<section id="testimonials">
-  <h2 id="testimonials-title">What My Fans Say</h2>
-  <div class="testimonial">
-    <p>"DJ Yusif made my wedding unforgettable with the best beats!"</p>
-    <p>- Aydan, Bride</p>
-  </div>
-  <div class="testimonial">
-    <p>"The music, lights, and vibe were just perfect. Highly recommend!"</p>
-    <p>- Farid, Groom</p>
-  </div>
-</section>
-
-<section id="fan-engagement">
-  <h2 id="fan-engagement-title">Get In Touch!</h2>
-  <p id="fan-engagement-description">Want to reach out? Drop your message below!</p>
-  <form action="#" method="POST">
-    <label for="name">Your Name:</label>
-    <input type="text" id="name" name="name" required>
-    <label for="message">Your Message:</label>
-    <textarea id="message" name="message" required></textarea>
-    <button type="submit" id="submit-button">Send Message</button>
-  </form>
-</section>
-
-<!-- Your other sections (booking, contact, footer, etc.) -->
+<!-- Back-to-Top Button -->
+<button id="backToTop" onclick="scrollToTop()">↑</button>
 
 <script>
   const languages = {
     en: {
-      "header-title": "DJ Yusif",
-      "header-description": "Official DJ Website – Beats. Lights. Energy.",
-      "nav-about": "About",
-      "nav-services": "Services",
-      "nav-gallery": "Photos",
-      "nav-products": "Products",
-      "nav-playlist": "Playlist",
-      "nav-promo": "Promo",
-      "nav-contact": "Contact",
-      "about-title": "About Me",
-      "about-description": "I'm DJ Yusif, a pro DJ from Azerbaijan. I light up weddings, parties, and events with beats and energy like no one else.",
-      "services-title": "Services",
-      "services-description": "🎵 Music Mixing<br>💡 Lighting<br>🎤 Microphone Hosting<br>🔊 Loud Sound System",
-      "gallery-title": "My DJ Photos",
-      "products-title": "Products",
-      "products-description": "Check out my exclusive DJ gear & merch!",
-      "playlist-title": "My Music Playlist",
-      "promo-title": "Promo Video",
-      "achievements-title": "My Achievements",
-      "achievements-list": [
-        "🏆 Best DJ of Baku - 2024",
-        "🎧 Performed at 100+ events",
-        "📀 Released 5 original tracks"
-      ],
-      "testimonials-title": "What My Fans Say",
-      "fan-engagement-title": "Get In Touch!",
-      "fan-engagement-description": "Want to reach out? Drop your message below!",
-      "submit-button": "Send Message"
-    },
-    ru: {
-      "header-title": "DJ Yusif",
-      "header-description": "Официальный сайт DJ – Музыка. Свет. Энергия.",
-      "nav-about": "О нас",
-      "nav-services": "Услуги",
-      "nav-gallery": "Фотографии",
-      "nav-products": "Продукты",
-      "nav-playlist": "Плейлист",
-      "nav-promo": "Промо",
-      "nav-contact": "Контакты",
-      "about-title": "Обо мне",
-      "about-description": "Я DJ Yusif, профессиональный DJ из Азербайджана. Я освещаю свадьбы, вечеринки и мероприятия с битами и энергией, как никто другой.",
-      "services-title": "Услуги",
-      "services-description": "🎵 Музыкальный микс<br>💡 Освещение<br>🎤 Ведущий<br>🔊 Громкая звуковая система",
-      "gallery-title": "Мои DJ Фото",
-      "products-title": "Продукты",
-      "products-description": "Посмотрите мое эксклюзивное оборудование DJ и мерч!",
-      "playlist-title": "Мой Музыкальный Плейлист",
-      "promo-title": "Промо Видео",
-      "achievements-title": "Мои Достижения",
-      "achievements-list": [
-        "🏆 Лучший DJ Баку - 2024",
-        "🎧 Провел более 100 мероприятий",
-        "📀 Выпустил 5 оригинальных треков"
-      ],
-      "testimonials-title": "Что говорят мои фанаты",
-      "fan-engagement-title": "Связаться со мной!",
-      "fan-engagement-description": "Хотите связаться? Оставьте ваше сообщение ниже!",
-      "submit-button": "Отправить сообщение"
+      headerTitle: "DJ Yusif",
+      headerSubtitle: "Official DJ Website – Beats. Lights. Energy.",
+      navAbout: "About",
+      navServices: "Services",
+      navGallery: "Photos",
+      navProducts: "Products",
+      navPlaylist: "Playlist",
+      navPromo: "Promo",
+      navContact: "Contact",
+      aboutTitle: "About Me",
+      aboutText: "I'm DJ Yusif, a pro DJ from Azerbaijan. I light up weddings, parties, and events with beats and energy like no one else.",
+      servicesTitle: "Services",
+      servicesText: "🎵 Music Mixing<br>💡 Lighting<br>🎤 Microphone Hosting<br>🔊 Loud Sound System",
+      galleryTitle: "My DJ Photos",
+      contactTitle: "Contact"
     },
     az: {
-      "header-title": "DJ Yusif",
-      "header-description": "Rəsmi DJ Veb Saytı – Ritmlər. İşıqlar. Enerji.",
-      "nav-about": "Haqqımda",
-      "nav-services": "Xidmətlər",
-      "nav-gallery": "Fotolar",
-      "nav-products": "Məhsullar",
-      "nav-playlist": "Pleylist",
-      "nav-promo": "Promo",
-      "nav-contact": "Əlaqə",
-      "about-title": "Haqqımda",
-      "about-description": "Mən DJ Yusif, Azərbaycanlı peşəkar DJ. Mən toyları, şənlikləri və tədbirləri ritmlər və enerji ilə işıqlandırıram.",
-      "services
+      headerTitle: "DJ Yusif",
+      headerSubtitle: "Rəsmi DJ Vebsaytı – Ritm. İşıqlar. Enerji.",
+      navAbout: "Haqqında",
+      navServices: "Xidmətlər",
+      navGallery: "Şəkillər",
+      navProducts: "Məhsullar",
+      navPlaylist: "Çalma siyahısı",
+      navPromo: "Promo",
+      navContact: "Əlaqə",
+      aboutTitle: "Haqqımda",
+      aboutText: "Mən DJ Yusif, Azərbaycandan olan peşəkar DJ-yəm. Mən toyları, partiləri və tədbirləri heç kəsin bacarmadığı qədər ritm və enerji ilə işıqlandırıram.",
+      servicesTitle: "Xidmətlər",
+      servicesText: "🎵 Musiqi Qarışıqları<br>💡 İşıqlandırma<br>🎤 Mikrofonla Aparıcılıq<br>🔊 Yüksək Səs Sistemi",
+      galleryTitle: "Mənim DJ Şəkillərim",
+      contactTitle: "Əlaqə"
+    },
+    ru: {
+      headerTitle: "DJ Yusif",
+      headerSubtitle: "Официальный сайт DJ – Биты. Огни. Энергия.",
+      navAbout: "О себе",
+      navServices: "Услуги",
+      navGallery: "Фотографии",
+      navProducts: "Продукты",
+      navPlaylist: "Плейлист",
+      navPromo: "Промо",
+      navContact: "Контакты",
+      aboutTitle: "Обо мне",
+      aboutText: "Я DJ Yusif, профессиональный DJ из Азербайджана. Я оживляю свадьбы, вечеринки и мероприятия с ритмами и энергией, как никто другой.",
+      servicesTitle: "Услуги",
+      servicesText: "🎵 Смешивание музыки<br>💡 Освещение<br>🎤 Ведущие микрофоны<br>🔊 Мощная звуковая система",
+      galleryTitle: "Мои DJ фотографии",
+      contactTitle: "Контакты"
+    }
+  };
+
+  function changeLanguage() {
+    const language = document.getElementById('language-select').value;
+    const content = languages[language];
+
+    // Update content based on selected language
+    document.getElementById('header-title').innerText = content.headerTitle;
+    document.getElementById('header-subtitle').innerText = content.headerSubtitle;
+    document.getElementById('nav-about').innerText = content.navAbout;
+    document.getElementById('nav-services').innerText = content.navServices;
+    document.getElementById('nav-gallery').innerText = content.navGallery;
+    document.getElementById('nav-products').innerText = content.navProducts;
+    document.getElementById('nav-playlist').innerText = content.navPlaylist;
+    document.getElementById('nav-promo').innerText = content.navPromo;
+    document.getElementById('nav-contact').innerText = content.navContact;
+    document.getElementById('about-title').innerText = content.aboutTitle;
+    document.getElementById('about-text').innerHTML = content.aboutText;
+    document.getElementById('services-title').innerText = content.servicesTitle;
+    document.getElementById('services-text').innerHTML = content.servicesText;
+    document.getElementById('gallery-title').innerText = content.galleryTitle;
+    document.getElementById('contact-title').innerText = content.contactTitle;
+  }
+
+  // Initial language load (default to English)
+  changeLanguage();
+</script>
+
+</body>
+</html>
