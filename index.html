@@ -20,7 +20,6 @@
       background: black;
       color: #fff;
       scroll-behavior: smooth;
-      padding-top: 50px; /* Prevent overlap with fixed nav */
     }
 
     /* Video background */
@@ -58,7 +57,6 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
     }
     nav a, .button {
       color: white;
@@ -69,10 +67,6 @@
       border-radius: 5px;
       cursor: pointer;
       border: none;
-      transition: background 0.3s ease;
-    }
-    nav a:hover, .button:hover {
-      background: #00bfff;
     }
     section {
       max-width: 900px;
@@ -107,7 +101,7 @@
       margin: 20px auto;
       max-width: 600px;
     }
-    input, select {
+    input, select, textarea {
       width: 100%;
       padding: 10px;
       margin-bottom: 15px;
@@ -120,6 +114,18 @@
       background: #0a1d37;
       text-align: center;
       padding: 20px;
+    }
+    footer ul {
+      list-style: none;
+      padding: 0;
+    }
+    footer ul li {
+      display: inline;
+      margin: 0 15px;
+    }
+    footer a {
+      color: #1e90ff;
+      text-decoration: none;
     }
     #backToTop {
       position: fixed;
@@ -146,49 +152,36 @@
       font-size: 1.2rem;
     }
 
-    /* Media Queries for Mobile */
+    /* Mobile Responsiveness */
     @media screen and (max-width: 768px) {
       header h1 {
         font-size: 2.5rem;
       }
-      header p {
-        font-size: 1.2rem;
+      section {
+        padding: 40px 15px;
+      }
+      .gallery img {
+        width: 100%;
       }
       nav {
         flex-direction: column;
       }
-      .gallery img {
-        width: 100%;
-        max-width: 300px;
-      }
-      .card {
-        padding: 15px;
-      }
       .button {
         width: 100%;
-        font-size: 1rem;
-        padding: 12px 20px;
+        padding: 15px;
       }
-      footer {
-        font-size: 1rem;
+      footer ul li {
+        display: block;
+        margin: 10px 0;
       }
     }
 
-    /* Mobile specific adjustments for navigation */
     @media screen and (max-width: 480px) {
-      .button {
-        padding: 12px;
-      }
-      .gallery img {
-        width: 100%;
-      }
-      nav a {
-        width: 100%;
-        text-align: center;
-        padding: 15px;
-      }
       header h1 {
         font-size: 2rem;
+      }
+      footer ul li {
+        text-align: center;
       }
     }
   </style>
@@ -260,7 +253,6 @@
   </ul>
 </section>
 
-<!-- Testimonial Section -->
 <section id="testimonials">
   <h2>What My Fans Say</h2>
   <div class="testimonial">
@@ -273,7 +265,6 @@
   </div>
 </section>
 
-<!-- Fan Engagement Section -->
 <section id="fan-engagement">
   <h2>Get In Touch!</h2>
   <p>Want to reach out? Drop your message below!</p>
@@ -285,55 +276,35 @@
     <button type="submit">Send Message</button>
   </form>
 </section>
-  
-  <section id="booking">
+
+<section id="booking">
   <h2>Book Me</h2>
   <div style="margin-bottom: 20px;">
     <button class="button" onclick="alert('Lighting Booking - $200')">Lighting 💡 - $200</button>
-    <button class="button" onclick="alert('Call Booking - $50')">Call 📞 - $50</button>
-    <button class="button" onclick="alert('Wedding Booking - $500')">Wedding 💍 - $500</button>
-  </div>
-  <div class="card">
-    <form onsubmit="handleSubmit(event)">
-      <label for="event-date">Event Date</label>
-      <input type="date" id="event-date" name="event-date" required>
-      <label for="event-type">Event Type</label>
-      <select id="event-type" name="event-type" required>
-        <option value="">Select type</option>
-        <option>Wedding</option>
-        <option>Party</option>
-        <option>Corporate</option>
-      </select>
-      <button type="submit">Book Now</button>
-    </form>
+    <button class="button" onclick="alert('Call Booking - $150')">Call 📞 - $150</button>
+    <button class="button" onclick="alert('Wedding Event Booking - $500')">Wedding Event 💍 - $500</button>
   </div>
 </section>
 
-<!-- Footer -->
 <footer>
-  <p>&copy; 2025 DJ Yusif. All rights reserved. <a href="mailto:contact@djyusif.com">Contact</a></p>
+  <p>&copy; 2025 DJ Yusif. All Rights Reserved.</p>
+  <ul>
+    <li><a href="https://www.instagram.com/djyusif/" target="_blank">Instagram</a></li>
+    <li><a href="https://www.youtube.com/channel/UCmFEqVYO2fbM2Pr9r_KNExg" target="_blank">YouTube</a></li>
+  </ul>
 </footer>
 
-<!-- Back to Top Button -->
-<button id="backToTop" onclick="window.scrollTo(0, 0)">↑</button>
+<button id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
 
 <script>
-  // Show back to top button on scroll
   window.onscroll = function() {
-    let btn = document.getElementById("backToTop");
-    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-      btn.style.display = "block";
+    var backToTopButton = document.getElementById("backToTop");
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      backToTopButton.style.display = "block";
     } else {
-      btn.style.display = "none";
+      backToTopButton.style.display = "none";
     }
   };
-
-  // Form submission logic
-  function handleSubmit(event) {
-    event.preventDefault();
-    alert("Thank you for your booking!");
-  }
 </script>
-
 </body>
 </html>
