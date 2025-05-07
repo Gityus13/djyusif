@@ -143,17 +143,11 @@
 </head>
 <body>
 
-  <!-- Desktop Video -->
-  <video class="dj_background.mp4" autoplay muted loop playsinline>
-    <source src="video-desktop.mp4" type="video/mp4" />
-    Your browser does not support the video tag.
-  </video>
-
-  <!-- Mobile Video -->
-  <video class="video-mobile" autoplay muted loop playsinline>
-    <source src="dj_background 2.mp4" type="video/mp4" />
-    Your browser does not support the video tag.
-  </video>
+<!-- Background Video -->
+<video class="video-background" autoplay loop muted playsinline>
+  <source src="dj_background.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
 
 <header>
   <img src="dj-logo.png" alt="DJ Yusif Logo" class="logo" />
@@ -304,38 +298,21 @@
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  // Video autoplay for mobile devices
-  window.addEventListener('load', function () {
-    const video = document.querySelector('.video-background');
-    if (video) {
-      video.play().catch((error) => {
-        console.log('Autoplay failed on mobile:', error);
-      });
-    }
-  });
-
-  // Form submission handling
   function handleSubmit(event) {
     event.preventDefault();
-    const successMessage = document.getElementById('success-message');
-    successMessage.style.display = 'block';
+    document.getElementById("success-message").style.display = 'block';
   }
 
-  // Account creation handling
   function createAccount(event) {
     event.preventDefault();
     const username = document.getElementById('username').value;
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
-    const successMessage = document.getElementById('account-success');
-    const errorMessage = document.getElementById('account-error');
 
     if (username && email && password) {
-      successMessage.style.display = 'block';
-      errorMessage.style.display = 'none';
+      document.getElementById("account-success").style.display = 'block';
     } else {
-      errorMessage.style.display = 'block';
-      successMessage.style.display = 'none';
+      document.getElementById("account-error").style.display = 'block';
     }
   }
 </script>
