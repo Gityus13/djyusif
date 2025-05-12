@@ -2,3 +2,14 @@ User-agent: *
 Disallow: /admin/
 Allow: /favicon.png
 Allow: /
+# Allow all bots to crawl the site
+User-agent: *
+Disallow: /private/
+Allow: /public/
+
+# Disallow a specific bot
+User-agent: BadBot
+Disallow: /
+
+# Set crawl delay for all bots
+Crawl-delay: 10
