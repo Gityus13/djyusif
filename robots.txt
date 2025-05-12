@@ -2,6 +2,7 @@ User-agent: *
 Disallow: /admin/
 Allow: /favicon.png
 Allow: /
+
 # Allow all bots to crawl the site
 User-agent: *
 Disallow: /private/
