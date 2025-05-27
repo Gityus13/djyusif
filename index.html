@@ -209,7 +209,44 @@
   </ul>
 </section>
 
-<section id="testimonials">
+  <!-- Place this div where you want the chat widget -->
+<div id="chatbox" style="max-width:600px; border: 2px solid #ccc; border-radius:12px; padding:20px; background:#f9f9f9;">
+  <div id="chatlog" style="height:300px; overflow-y:auto; margin-bottom:10px;"></div>
+  <input type="text" id="userInput" placeholder="Ask me anything..." style="width:80%; padding:10px; border-radius:6px; border:1px solid #aaa;">
+  <button onclick="sendToChatGPT()" style="padding:10px 15px; border:none; background:#4CAF50; color:#fff; border-radius:6px; cursor:pointer;">Send</button>
+</div>
+
+<script>
+async function sendToChatGPT() {
+  const input = document.getElementById('userInput');
+  const message = input.value.trim();
+  if(!message) return;
+  input.value = '';
+
+  const chatlog = document.getElementById('chatlog');
+  chatlog.innerHTML += `<div style="color:blue; margin: 10px 0;"><strong>You:</strong> ${message}</div>`;
+
+  const response = await fetch('https://api.openai.com/v1/chat/completions', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': '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'  // Replace with your OpenAI API key
+    },
+    body: JSON.stringify({
+      model: 'gpt-3.5-turbo',
+      messages: [{ role: 'user', content: message }]
+    })
+  });
+
+  const data = await response.json();
+  const reply = data.choices[0].message.content;
+
+  chatlog.innerHTML += `<div style="color:green; margin: 10px 0;"><strong>ChatGPT:</strong> ${reply}</div>`;
+  chatlog.scrollTop = chatlog.scrollHeight; // scroll to bottom
+}
+</script>
+
+  <section id="testimonials">
   <h2>What My Fans Say</h2>
   <div class="testimonial">
     <p>"DJ Yusif made my wedding unforgettable with the best beats!"</p>
