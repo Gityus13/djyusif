@@ -209,46 +209,7 @@
   </ul>
 </section>
 
- <script>
-async function sendToChatGPT() {
-  const input = document.getElementById('userInput');
-  const message = input.value.trim();
-  if(!message) return;
-  input.value = '';
-
-  const chatlog = document.getElementById('chatlog');
-  chatlog.innerHTML += `<div style="color:blue; margin: 10px 0;"><strong>You:</strong> ${message}</div>`;
-
-  try {
-    const response = await fetch('https://api.openai.com/v1/chat/completions', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': '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'  // <-- Replace this with your real key!
-      },
-      body: JSON.stringify({
-        model: 'gpt-3.5-turbo',
-        messages: [{ role: 'user', content: message }]
-      })
-    });
-
-    if (!response.ok) {
-      throw new Error(`OpenAI API error: ${response.status} ${response.statusText}`);
-    }
-
-    const data = await response.json();
-    const reply = data.choices[0].message.content;
-
-    chatlog.innerHTML += `<div style="color:green; margin: 10px 0;"><strong>ChatGPT:</strong> ${reply}</div>`;
-    chatlog.scrollTop = chatlog.scrollHeight; // scroll to bottom
-
-  } catch (error) {
-    chatlog.innerHTML += `<div style="color:red; margin: 10px 0;"><strong>Error:</strong> ${error.message}</div>`;
-  }
-}
-</script>
-
-  <section id="testimonials">
+<section id="testimonials">
   <h2>What My Fans Say</h2>
   <div class="testimonial">
     <p>"DJ Yusif made my wedding unforgettable with the best beats!"</p>
