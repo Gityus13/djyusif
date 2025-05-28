@@ -221,62 +221,6 @@
   </div>
 </section>
 
-<!-- Fan Engagement Section -->
-<section id="fan-engagement">
-  <h2>Get In Touch!</h2>
-  <p>Want to reach out? Drop your message below!</p>
-  <form action="#" method="POST">
-    <label for="name">Your Name:</label>
-    <input type="text" id="name" name="name" required>
-    <label for="message">Your Message:</label>
-    <textarea id="message" name="message" required></textarea>
-    <button type="submit">Send Message</button>
-  </form>
-</section>
-  
-  <style>
-  .contact-form {
-    max-width: 500px;
-    margin: 40px auto;
-    font-family: 'Segoe UI', sans-serif;
-    color: white;
-  }
-
-  .contact-form input,
-  .contact-form select,
-  .contact-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-top: 6px;
-    margin-bottom: 15px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    background-color: #1a1a1a;
-    color: white;
-  }
-
-  .contact-form label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-  }
-
-  .contact-form button {
-    background-color: #ff4d00;
-    color: white;
-    border: none;
-    padding: 12px;
-    border-radius: 8px;
-    cursor: pointer;
-    width: 100%;
-    font-size: 16px;
-  }
-
-  .contact-form button:hover {
-    background-color: #e64500;
-  }
-</style>
-
 <div class="contact-form">
   <form action="https://formsubmit.co/info@djyusif.com" method="POST">
     <!-- Hidden settings -->
@@ -302,10 +246,11 @@
     <label for="message">Your Message</label>
     <textarea name="Message" id="message" rows="6" required></textarea>
 
-    <button type="submit">Send Message</button>
+    <button type="submit" style="background-color: blue; color: grey;">Send Message</button>
   </form>
 </div>
-  <div class="card">
+  
+<div class="card">
     <form onsubmit="handleSubmit(event)">
       <label for="event-date">Event Date</label>
       <input type="date" id="event-date" name="event-date" required>
