@@ -227,6 +227,7 @@
     <input type="hidden" name="_captcha" value="false">
     <input type="hidden" name="_template" value="table">
     <input type="hidden" name="_autoresponse" value="Thanks for contacting DJ Yusif! We’ll get back to you soon.">
+    <input type="hidden" name="_next" value="https://djyusif.com/thank-you.html">
 
     <label for="topic">What is your message about?</label>
     <select name="Topic" id="topic" required>
@@ -238,17 +239,59 @@
     </select>
 
     <label for="name">Your Name</label>
-    <input type="text" name="Name" id="name" required>
+    <input type="text" name="Name" id="name" required pattern="[A-Za-z\s]+" title="Please enter a valid name (letters only)" placeholder="Enter your full name">
 
     <label for="email">Your Email</label>
-    <input type="email" name="Email" id="email" required>
+    <input type="email" name="Email" id="email" required placeholder="Enter your email address">
 
     <label for="message">Your Message</label>
-    <textarea name="Message" id="message" rows="6" required></textarea>
+    <textarea name="Message" id="message" rows="6" required placeholder="Type your message here..."></textarea>
 
-    <button type="submit" style="background-color: blue; color: grey;">Send Message</button>
+    <button type="submit">Send Message</button>
   </form>
 </div>
+
+<style>
+  .contact-form {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  }
+
+  .contact-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+
+  .contact-form input,
+  .contact-form select,
+  .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+  }
+
+  .contact-form button {
+    background-color: #1f8ef1;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  .contact-form button:hover {
+    background-color: #0d6efd;
+  }
+</style>
   
 <div class="card">
     <form onsubmit="handleSubmit(event)">
