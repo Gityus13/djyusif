@@ -263,27 +263,83 @@
   </div>
 </section>
 
-<style>
-  .chatgpt-link {
-    display: inline-block;
-    padding: 10px 20px;
-    background: #10a37f;
-    color: white;
-    font-weight: bold;
-    border-radius: 5px;
-    text-decoration: none;
-    font-family: Arial, sans-serif;
-  }
-  .chatgpt-link:hover {
-    background: #0e8a6d;
-  }
-</style>
+<html>
+<head>
+  <title>DJ Yusif Chatbox</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #111;
+      color: #fff;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+    #response {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #00ffcc;
+    }
+    #commands {
+      margin-top: 30px;
+      background: #222;
+      padding: 15px;
+      border-radius: 10px;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
 
-<a href="https://chat.openai.com" target="_blank" rel="noopener noreferrer" class="chatgpt-link">
-  Chat with ChatGPT
-</a>
-  
-  <section id="contact">
+<h2>💬 Chat with DJ Yusif</h2>
+
+<input type="text" id="userInput" placeholder="Type something..." />
+<button onclick="reply()">Send</button>
+
+<p id="response"></p>
+
+<div id="commands">
+  <h3>🧠 You can type:</h3>
+  <ul>
+    <li><strong>hi</strong> → hello, what’s up?</li>
+    <li><strong>best dj</strong> → DJ Yusif 🔥</li>
+    <li><strong>your name</strong> → I’m DJ Yusif 🎧</li>
+    <li><strong>how are you</strong> → I’m feeling the beat, thanks!</li>
+    <li><strong>play music</strong> → Playing some phonk 🔊</li>
+    <li><strong>bye</strong> → See you later, keep dancing! 👋</li>
+  </ul>
+</div>
+
+<script>
+  function reply() {
+    const input = document.getElementById('userInput').value.toLowerCase().trim();
+    let answer = '';
+
+    if(input === 'hi') {
+      answer = 'Hello, what’s up? 🎧';
+    } else if(input === 'best dj') {
+      answer = 'DJ Yusif 🔥';
+    } else if(input === 'your name') {
+      answer = 'I’m DJ Yusif 🎶';
+    } else if(input === 'how are you') {
+      answer = 'I’m feeling the beat, thanks! 😎';
+    } else if(input === 'play music') {
+      answer = 'Playing some phonk 🔊';
+    } else if(input === 'bye') {
+      answer = 'See you later, keep dancing! 👋';
+    } else {
+      answer = 'Sorry, I don’t understand that yet.';
+    }
+
+    document.getElementById('response').innerText = answer;
+    document.getElementById('userInput').value = '';
+  }
+</script>
+
+ <section id="contact">
   <h2>Contact</h2>
   <p>📧 Email: <a href="mailto:info@djyusif.com">info@djyusif.com</a></p>
   <div style="margin-top: 20px;">
