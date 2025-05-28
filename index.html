@@ -234,13 +234,77 @@
   </form>
 </section>
   
-  <section id="booking">
-  <h2>Book Me</h2>
-  <div style="margin-bottom: 20px;">
-    <button class="button" onclick="alert('Lighting Booking - $200')">Lighting 💡 - $200</button>
-    <button class="button" onclick="alert('Call Booking - $50')">Call 📞 - $50</button>
-    <button class="button" onclick="alert('Wedding Booking - $500')">Wedding 💍 - $500</button>
-  </div>
+  <style>
+  .contact-form {
+    max-width: 500px;
+    margin: 40px auto;
+    font-family: 'Segoe UI', sans-serif;
+    color: white;
+  }
+
+  .contact-form input,
+  .contact-form select,
+  .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #1a1a1a;
+    color: white;
+  }
+
+  .contact-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+
+  .contact-form button {
+    background-color: #ff4d00;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .contact-form button:hover {
+    background-color: #e64500;
+  }
+</style>
+
+<div class="contact-form">
+  <form action="https://formsubmit.co/info@djyusif.com" method="POST">
+    <!-- Hidden settings -->
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_autoresponse" value="Thanks for contacting DJ Yusif! We’ll get back to you soon.">
+
+    <label for="topic">What is your message about?</label>
+    <select name="Topic" id="topic" required>
+      <option value="">-- Select Topic --</option>
+      <option value="Booking">Booking</option>
+      <option value="Collaboration">Collaboration</option>
+      <option value="Event Details">Event Details</option>
+      <option value="Other">Other</option>
+    </select>
+
+    <label for="name">Your Name</label>
+    <input type="text" name="Name" id="name" required>
+
+    <label for="email">Your Email</label>
+    <input type="email" name="Email" id="email" required>
+
+    <label for="message">Your Message</label>
+    <textarea name="Message" id="message" rows="6" required></textarea>
+
+    <button type="submit">Send Message</button>
+  </form>
+</div>
   <div class="card">
     <form onsubmit="handleSubmit(event)">
       <label for="event-date">Event Date</label>
