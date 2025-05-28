@@ -209,7 +209,35 @@
   </ul>
 </section>
 
-<section id="testimonials">
+<title>ChatGPT Chat</title>
+</head>
+<body>
+  <h1>Ask ChatGPT 🤖</h1>
+  
+  <textarea id="userInput" placeholder="Type your message here..." rows="4" style="width:100%;"></textarea><br>
+  
+  <button onclick="sendMessage()">Send</button>
+  
+  <p id="response" style="white-space: pre-wrap; margin-top: 15px;"></p>
+
+  <script>
+    async function sendMessage() {
+      const input = document.getElementById('userInput').value;
+      const responseBox = document.getElementById('response');
+      responseBox.textContent = 'Thinking...';
+
+      const response = await fetch('http://localhost:3000/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: input })
+      });
+
+      const data = await response.json();
+      responseBox.textContent = data.reply;
+    }
+  </script>
+
+  <section id="testimonials">
   <h2>What My Fans Say</h2>
   <div class="testimonial">
     <p>"DJ Yusif made my wedding unforgettable with the best beats!"</p>
