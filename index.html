@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>DJ Yusif | Official Website</title>
@@ -224,7 +227,6 @@
 <div class="contact-form">
   <form action="https://formsubmit.co/info@djyusif.com" method="POST">
     <!-- Hidden settings -->
-    <input type="hidden" name="_captcha" value="false">
     <input type="hidden" name="_template" value="table">
     <input type="hidden" name="_autoresponse" value="Thanks for contacting DJ Yusif! We’ll get back to you soon.">
 
@@ -245,7 +247,10 @@
 
     <label for="message">Your Message</label>
     <textarea name="Message" id="message" rows="6" required></textarea>
-  <button type="submit">Send Message</button>
+    
+    <div class="g-recaptcha" data-sitekey="6LdGBGwrAAAAAG_2v8Qu4U7mVR-ODfNmoyfhOciD"></div>
+    
+    <button type="submit">Send Message</button>
   </form>
 </div>
 
